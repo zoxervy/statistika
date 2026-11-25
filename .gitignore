@@ -10,10 +10,23 @@ Thumbs.db
 .env
 .env.*
 
-# Dependencies & build
+# Dependencies & build (hanya di root; folder build/ di dalam vault berisi skrip dan ikut di-commit)
 node_modules/
 __pycache__/
 *.pyc
 .venv/
-dist/
-build/
+/dist/
+/build/
+
+# Obsidian: plugin pihak ketiga (bisa berisi konfigurasi/log) dan state tampilan lokal
+Statistika-RegresiHarmonik/.obsidian/plugins/
+Statistika-RegresiHarmonik/.obsidian/workspace.json
+
+# Berkas sumber berhak cipta ("jangan disebarkan ulang", lihat README di folder masing-masing)
+Statistika-RegresiHarmonik/Berkas/Artikel/*
+!Statistika-RegresiHarmonik/Berkas/Artikel/README.txt
+Statistika-RegresiHarmonik/Berkas/BPS/*.pdf
+
+# Data pribadi (NIM anggota); repo publik
+Statistika-RegresiHarmonik/build/anggota.json
+Statistika-RegresiHarmonik/08 Presentasi/NIM Anggota (lokal).md
