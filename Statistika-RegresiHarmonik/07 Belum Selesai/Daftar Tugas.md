@@ -45,7 +45,7 @@ Lingkup: laporan Bab I–III, Daftar Pustaka, Lampiran A dan B. Tidak ada Bab IV
 - [x] Panduan 00–04 dan Konsep (Data Latih dan Data Uji, RMSE, Baseline, R², Uji F, OLS, Deret Waktu, Penelitian Terdahulu).
 - [x] Teks `build/buat_docx.py` disamakan dengan vault (tidak dijalankan).
 - [ ] Docx: belum diubah. Bagian yang perlu disamakan sama dengan daftar vault di atas; tunggu perintah.
-- [ ] Judul laporan masih "... Tahun 2020–2025 dan Peramalan dengan Model Regresi Harmonik". Tambah "Tahun 2026" hanya kalau kelompok mau.
+- [x] Judul (25 Nov 2026): "Analisis Curah Hujan Bulanan Kota Mataram Tahun 2020–2025 dan Peramalan Tahun 2026 dengan Model Regresi Harmonik" (vault dan `buat_docx.py`; docx belum).
 
 Kembali: [[00 Peta Proyek]]
 - [x] OCR Susilokarti (1 Nov 2026): abstrak cocok dengan isi, kecuali angka MSE 14,92 yang hanya ada di abstrak; dibuang dari Tabel 2.1.

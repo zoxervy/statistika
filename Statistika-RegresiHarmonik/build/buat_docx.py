@@ -412,7 +412,7 @@ class Harmonik(Revisi):
         d = self.d
         # ===== sampul =====
         for _ in range(2): d.add_paragraph()
-        self.para("<b>ANALISIS CURAH HUJAN BULANAN KOTA MATARAM TAHUN\u00a02020\u20112025 DAN PERAMALAN DENGAN MODEL REGRESI HARMONIK</b>", indent=False, align="c", after=24)
+        self.para("<b>ANALISIS CURAH HUJAN BULANAN KOTA MATARAM TAHUN\u00a02020\u20112025 DAN PERAMALAN TAHUN\u00a02026 DENGAN MODEL REGRESI HARMONIK</b>", indent=False, align="c", after=24)
         self.para("Dosen Pengampu:", indent=False, align="c")
         self.para("Siti Soraya, M.Si", indent=False, align="c", after=30)
         p = d.add_paragraph(); p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -440,7 +440,7 @@ class Harmonik(Revisi):
 
         # ===== kata pengantar =====
         self.h1("KATA PENGANTAR", "front", brk=True)
-        self.para("Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa sehingga laporan tugas mata kuliah Statistika berjudul \"Analisis Curah Hujan Bulanan Kota Mataram Tahun 2020-2025 dan Peramalan dengan Model Regresi Harmonik\" dapat diselesaikan. "
+        self.para("Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa sehingga laporan tugas mata kuliah Statistika berjudul \"Analisis Curah Hujan Bulanan Kota Mataram Tahun 2020-2025 dan Peramalan Tahun 2026 dengan Model Regresi Harmonik\" dapat diselesaikan. "
                   "Laporan ini disusun untuk tugas Program Studi S1 Ilmu Komputer, Fakultas Teknik, Universitas Bumigora.")
         self.para("Laporan memuat Bab I Pendahuluan, Bab II Kajian Pustaka, dan Bab III Metode Penelitian. Seluruh data curah hujan bersumber dari BMKG dan dimuat dalam publikasi resmi BPS Kota Mataram; "
                   "tidak ada angka yang diisi atau diperkirakan sendiri. Hal yang tidak lazim pada sumber data dicatat pada Bab III.")

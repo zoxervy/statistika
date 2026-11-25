@@ -8,7 +8,7 @@ tags: [statistika, regresi-harmonik, panduan]
 Naskah asli: [[Abstrak dan Kata Pengantar]]. Prasyarat: [[00 Mulai Di Sini]].
 
 ## Sampul
-- **Judul:** Analisis Curah Hujan Bulanan Kota Mataram Tahun 2020–2025 dan Peramalan dengan Model Regresi Harmonik.
+- **Judul:** Analisis Curah Hujan Bulanan Kota Mataram Tahun 2020–2025 dan Peramalan Tahun 2026 dengan Model Regresi Harmonik.
 - **Dosen pengampu:** Siti Soraya, M.Si.
 - **Anggota:** Ahmad Yusuf, Gracia Yusti Euaggelion, Raudhatul Athfal. NIM: [[NIM Anggota (lokal)]].
 - **Kampus:** S1 Ilmu Komputer, Fakultas Teknik, Universitas Bumigora.

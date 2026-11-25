@@ -29,7 +29,7 @@ Laporan ini memuat Bab I sampai Bab III. Hasil yang akan diperoleh berupa persam
 
 ## KATA PENGANTAR
 
-Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa sehingga laporan tugas mata kuliah Statistika berjudul "Analisis Curah Hujan Bulanan Kota Mataram Tahun 2020–2025 dan Peramalan dengan Model Regresi Harmonik" dapat diselesaikan. Laporan ini disusun untuk tugas Program Studi S1 Ilmu Komputer, Fakultas Teknik, Universitas Bumigora.
+Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa sehingga laporan tugas mata kuliah Statistika berjudul "Analisis Curah Hujan Bulanan Kota Mataram Tahun 2020–2025 dan Peramalan Tahun 2026 dengan Model Regresi Harmonik" dapat diselesaikan. Laporan ini disusun untuk tugas Program Studi S1 Ilmu Komputer, Fakultas Teknik, Universitas Bumigora.
 
 Laporan memuat Bab I Pendahuluan, Bab II Kajian Pustaka, dan Bab III Metode Penelitian. Seluruh data curah hujan bersumber dari BMKG dan dimuat dalam publikasi resmi BPS Kota Mataram; tidak ada angka yang diisi atau diperkirakan sendiri. Hal yang tidak lazim pada sumber data dicatat pada Bab III.
 
