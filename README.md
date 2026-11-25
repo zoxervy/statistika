@@ -1,0 +1,3 @@
+# statistika
+
+Project statistika.
