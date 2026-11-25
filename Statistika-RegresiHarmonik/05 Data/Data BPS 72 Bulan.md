@@ -39,9 +39,9 @@ Selisih 2024 sebesar 0,005 mm berasal dari pembulatan BPS (150,725 menjadi 150,7
 - **672,5 mm** pada Desember 2024, nilai terbesar; di atas batas pencilan 590,0 mm (kuartil 3 + 1,5 × jangkauan antarkuartil).
 - Seluruh data apa adanya; tidak ada angka yang diubah.
 
-## 4. Pembagian data
-- Data latih (60 bulan): Januari 2020 sampai Desember 2024, t = 0 sampai 59.
-- Data uji (12 bulan): Januari 2025 sampai Desember 2025, t = 60 sampai 71.
+## 4. Pemakaian data
+- Seluruh 72 bulan (Januari 2020 sampai Desember 2025, t = 0 sampai 71) dipakai menaksir model. Tidak ada pembagian data latih dan data uji ([[Keputusan Ramal 2026 dan Dasar Penelitian]]).
+- Ramalan: Januari sampai Desember 2026, t = 72 sampai 83.
 - t = 0 pada Januari 2020.
 
 ## 5. Ringkasan statistik deskriptif (72 bulan)
@@ -64,80 +64,80 @@ Per tahun:
 ## 6. Daftar panjang (72 baris)
 Bentuk yang dipakai pengolahan: satu baris per bulan, t = nomor bulan sejak Januari 2020.
 
-| No | Tahun | Bulan | t | Curah hujan (mm) | Data |
-|---|---|---|---|---|---|
-| 1 | 2020 | Jan | 0 | 182,2 | latih |
-| 2 | 2020 | Feb | 1 | 150,8 | latih |
-| 3 | 2020 | Mar | 2 | 273,5 | latih |
-| 4 | 2020 | Apr | 3 | 214,1 | latih |
-| 5 | 2020 | Mei | 4 | 173,6 | latih |
-| 6 | 2020 | Jun | 5 | 37,7 | latih |
-| 7 | 2020 | Jul | 6 | 13,3 | latih |
-| 8 | 2020 | Agu | 7 | 65,9 | latih |
-| 9 | 2020 | Sep | 8 | 51,5 | latih |
-| 10 | 2020 | Okt | 9 | 213,2 | latih |
-| 11 | 2020 | Nov | 10 | 281,9 | latih |
-| 12 | 2020 | Des | 11 | 203,7 | latih |
-| 13 | 2021 | Jan | 12 | 259,0 | latih |
-| 14 | 2021 | Feb | 13 | 309,0 | latih |
-| 15 | 2021 | Mar | 14 | 173,8 | latih |
-| 16 | 2021 | Apr | 15 | 109,0 | latih |
-| 17 | 2021 | Mei | 16 | 144,5 | latih |
-| 18 | 2021 | Jun | 17 | 323,0 | latih |
-| 19 | 2021 | Jul | 18 | 0,0 | latih |
-| 20 | 2021 | Agu | 19 | 41,0 | latih |
-| 21 | 2021 | Sep | 20 | 65,0 | latih |
-| 22 | 2021 | Okt | 21 | 126,5 | latih |
-| 23 | 2021 | Nov | 22 | 291,4 | latih |
-| 24 | 2021 | Des | 23 | 344,0 | latih |
-| 25 | 2022 | Jan | 24 | 212,0 | latih |
-| 26 | 2022 | Feb | 25 | 281,0 | latih |
-| 27 | 2022 | Mar | 26 | 213,0 | latih |
-| 28 | 2022 | Apr | 27 | 220,0 | latih |
-| 29 | 2022 | Mei | 28 | 199,0 | latih |
-| 30 | 2022 | Jun | 29 | 134,0 | latih |
-| 31 | 2022 | Jul | 30 | 10,0 | latih |
-| 32 | 2022 | Agu | 31 | 130,0 | latih |
-| 33 | 2022 | Sep | 32 | 64,0 | latih |
-| 34 | 2022 | Okt | 33 | 395,0 | latih |
-| 35 | 2022 | Nov | 34 | 431,0 | latih |
-| 36 | 2022 | Des | 35 | 384,0 | latih |
-| 37 | 2023 | Jan | 36 | 254,0 | latih |
-| 38 | 2023 | Feb | 37 | 454,0 | latih |
-| 39 | 2023 | Mar | 38 | 264,0 | latih |
-| 40 | 2023 | Apr | 39 | 114,0 | latih |
-| 41 | 2023 | Mei | 40 | 8,0 | latih |
-| 42 | 2023 | Jun | 41 | 4,0 | latih |
-| 43 | 2023 | Jul | 42 | 69,0 | latih |
-| 44 | 2023 | Agu | 43 | 0,0 | latih |
-| 45 | 2023 | Sep | 44 | 1,0 | latih |
-| 46 | 2023 | Okt | 45 | 31,0 | latih |
-| 47 | 2023 | Nov | 46 | 137,0 | latih |
-| 48 | 2023 | Des | 47 | 303,0 | latih |
-| 49 | 2024 | Jan | 48 | 134,8 | latih |
-| 50 | 2024 | Feb | 49 | 199,9 | latih |
-| 51 | 2024 | Mar | 50 | 209,0 | latih |
-| 52 | 2024 | Apr | 51 | 320,9 | latih |
-| 53 | 2024 | Mei | 52 | 3,2 | latih |
-| 54 | 2024 | Jun | 53 | 10,5 | latih |
-| 55 | 2024 | Jul | 54 | 23,9 | latih |
-| 56 | 2024 | Agu | 55 | 4,7 | latih |
-| 57 | 2024 | Sep | 56 | 17,2 | latih |
-| 58 | 2024 | Okt | 57 | 22,9 | latih |
-| 59 | 2024 | Nov | 58 | 189,2 | latih |
-| 60 | 2024 | Des | 59 | 672,5 | latih |
-| 61 | 2025 | Jan | 60 | 253,0 | uji |
-| 62 | 2025 | Feb | 61 | 351,0 | uji |
-| 63 | 2025 | Mar | 62 | 353,0 | uji |
-| 64 | 2025 | Apr | 63 | 152,0 | uji |
-| 65 | 2025 | Mei | 64 | 194,0 | uji |
-| 66 | 2025 | Jun | 65 | 48,0 | uji |
-| 67 | 2025 | Jul | 66 | 143,0 | uji |
-| 68 | 2025 | Agu | 67 | 32,0 | uji |
-| 69 | 2025 | Sep | 68 | 120,0 | uji |
-| 70 | 2025 | Okt | 69 | 287,0 | uji |
-| 71 | 2025 | Nov | 70 | 286,0 | uji |
-| 72 | 2025 | Des | 71 | 198,0 | uji |
+| No | Tahun | Bulan | t | Curah hujan (mm) |
+|---|---|---|---|---|
+| 1 | 2020 | Jan | 0 | 182,2 |
+| 2 | 2020 | Feb | 1 | 150,8 |
+| 3 | 2020 | Mar | 2 | 273,5 |
+| 4 | 2020 | Apr | 3 | 214,1 |
+| 5 | 2020 | Mei | 4 | 173,6 |
+| 6 | 2020 | Jun | 5 | 37,7 |
+| 7 | 2020 | Jul | 6 | 13,3 |
+| 8 | 2020 | Agu | 7 | 65,9 |
+| 9 | 2020 | Sep | 8 | 51,5 |
+| 10 | 2020 | Okt | 9 | 213,2 |
+| 11 | 2020 | Nov | 10 | 281,9 |
+| 12 | 2020 | Des | 11 | 203,7 |
+| 13 | 2021 | Jan | 12 | 259,0 |
+| 14 | 2021 | Feb | 13 | 309,0 |
+| 15 | 2021 | Mar | 14 | 173,8 |
+| 16 | 2021 | Apr | 15 | 109,0 |
+| 17 | 2021 | Mei | 16 | 144,5 |
+| 18 | 2021 | Jun | 17 | 323,0 |
+| 19 | 2021 | Jul | 18 | 0,0 |
+| 20 | 2021 | Agu | 19 | 41,0 |
+| 21 | 2021 | Sep | 20 | 65,0 |
+| 22 | 2021 | Okt | 21 | 126,5 |
+| 23 | 2021 | Nov | 22 | 291,4 |
+| 24 | 2021 | Des | 23 | 344,0 |
+| 25 | 2022 | Jan | 24 | 212,0 |
+| 26 | 2022 | Feb | 25 | 281,0 |
+| 27 | 2022 | Mar | 26 | 213,0 |
+| 28 | 2022 | Apr | 27 | 220,0 |
+| 29 | 2022 | Mei | 28 | 199,0 |
+| 30 | 2022 | Jun | 29 | 134,0 |
+| 31 | 2022 | Jul | 30 | 10,0 |
+| 32 | 2022 | Agu | 31 | 130,0 |
+| 33 | 2022 | Sep | 32 | 64,0 |
+| 34 | 2022 | Okt | 33 | 395,0 |
+| 35 | 2022 | Nov | 34 | 431,0 |
+| 36 | 2022 | Des | 35 | 384,0 |
+| 37 | 2023 | Jan | 36 | 254,0 |
+| 38 | 2023 | Feb | 37 | 454,0 |
+| 39 | 2023 | Mar | 38 | 264,0 |
+| 40 | 2023 | Apr | 39 | 114,0 |
+| 41 | 2023 | Mei | 40 | 8,0 |
+| 42 | 2023 | Jun | 41 | 4,0 |
+| 43 | 2023 | Jul | 42 | 69,0 |
+| 44 | 2023 | Agu | 43 | 0,0 |
+| 45 | 2023 | Sep | 44 | 1,0 |
+| 46 | 2023 | Okt | 45 | 31,0 |
+| 47 | 2023 | Nov | 46 | 137,0 |
+| 48 | 2023 | Des | 47 | 303,0 |
+| 49 | 2024 | Jan | 48 | 134,8 |
+| 50 | 2024 | Feb | 49 | 199,9 |
+| 51 | 2024 | Mar | 50 | 209,0 |
+| 52 | 2024 | Apr | 51 | 320,9 |
+| 53 | 2024 | Mei | 52 | 3,2 |
+| 54 | 2024 | Jun | 53 | 10,5 |
+| 55 | 2024 | Jul | 54 | 23,9 |
+| 56 | 2024 | Agu | 55 | 4,7 |
+| 57 | 2024 | Sep | 56 | 17,2 |
+| 58 | 2024 | Okt | 57 | 22,9 |
+| 59 | 2024 | Nov | 58 | 189,2 |
+| 60 | 2024 | Des | 59 | 672,5 |
+| 61 | 2025 | Jan | 60 | 253,0 |
+| 62 | 2025 | Feb | 61 | 351,0 |
+| 63 | 2025 | Mar | 62 | 353,0 |
+| 64 | 2025 | Apr | 63 | 152,0 |
+| 65 | 2025 | Mei | 64 | 194,0 |
+| 66 | 2025 | Jun | 65 | 48,0 |
+| 67 | 2025 | Jul | 66 | 143,0 |
+| 68 | 2025 | Agu | 67 | 32,0 |
+| 69 | 2025 | Sep | 68 | 120,0 |
+| 70 | 2025 | Okt | 69 | 287,0 |
+| 71 | 2025 | Nov | 70 | 286,0 |
+| 72 | 2025 | Des | 71 | 198,0 |
 
 ## Sumber tiap tahun
 Edisi tahun N memuat data tahun N − 1. Halaman yang dipakai tersimpan sebagai PDF satu halaman di `Berkas/BPS/` (teksnya di `data_mentah/bps_halaman/`):

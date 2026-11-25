@@ -15,13 +15,13 @@ Halaman terpisah sesuai catatan dosen pengampu ([[K01 Abstrak dan Kata Pengantar
 Curah hujan Kota Mataram berpola musiman: rata-rata Desember 2020–2025 sebesar 350,9 mm, sedangkan Juli hanya 43,2 mm. Besarnya curah hujan bulanan berdampak pada pertanian, ketersediaan air, dan risiko banjir maupun kekeringan, sehingga diperlukan model yang dapat menggambarkan dan meramalkan pola musimannya.
 
 **Paragraf 2 (Tujuan):**  
-Penelitian ini bertujuan mengetahui hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik.
+Penelitian ini bertujuan mengetahui hasil peramalan curah hujan bulanan Kota Mataram tahun 2026 dengan model regresi harmonik.
 
 **Paragraf 3 (Metode):**  
-Data sekunder berupa 72 pengamatan bulanan Januari 2020 sampai Desember 2025 dari Tabel 1.2.1 publikasi *Kota Mataram dalam Angka* 2021 sampai 2026 (data asal BMKG). Data dibagi urut waktu menjadi 60 bulan data latih (2020–2024) dan 12 bulan data uji (2025). Tahapannya statistik deskriptif, pembentukan variabel sinus dan kosinus berperiode 12 bulan, estimasi *Ordinary Least Squares* dengan uji F, serta pengukuran RMSE dan MAE terhadap ramalan sederhana.
+Data sekunder berupa 72 pengamatan bulanan Januari 2020 sampai Desember 2025 dari Tabel 1.2.1 publikasi *Kota Mataram dalam Angka* 2021 sampai 2026 (data asal BMKG). Seluruh 72 data dipakai menyusun model. Tahapannya statistik deskriptif, pembentukan variabel sinus dan kosinus berperiode 12 bulan, estimasi *Ordinary Least Squares* dengan uji F, penilaian kecocokan model dengan R² dan RMSE, lalu peramalan 12 bulan tahun 2026.
 
 **Paragraf 4 (Rencana hasil):**  
-Laporan ini memuat Bab I sampai Bab III. Hasil yang akan diperoleh berupa persamaan regresi harmonik dengan amplitudo dan fase musiman, serta nilai RMSE dan MAE pada data uji 2025 dibandingkan dengan ramalan sederhana.
+Laporan ini memuat Bab I sampai Bab III. Hasil yang akan diperoleh berupa persamaan regresi harmonik dengan amplitudo dan fase musiman, nilai R² dan RMSE, serta ramalan curah hujan bulanan Januari sampai Desember 2026.
 
 **Kata kunci:** curah hujan, Kota Mataram, deret waktu, regresi harmonik, deret Fourier, RMSE
 

@@ -8,7 +8,7 @@ tags: [statistika, regresi-harmonik, konsul]
 
 **Catatan Dosen / Pertimbangan:** "latar belakang tujuan metode hasil kesimpulan abstrak 4 paragraph cukup"
 
-**Keputusan:** Abstrak disusun tepat 4 paragraf: Latar belakang musiman, Tujuan penelitian, Metode regresi harmonik OLS, dan Rencana hasil evaluasi data uji 2025.
+**Keputusan:** Abstrak disusun tepat 4 paragraf: Latar belakang musiman, Tujuan penelitian, Metode regresi harmonik OLS, dan Rencana hasil (persamaan, R² dan RMSE, ramalan 2026; diubah 25 Nov 2026, [[Keputusan Ramal 2026 dan Dasar Penelitian]]).
 
 **Status:** Selesai
 

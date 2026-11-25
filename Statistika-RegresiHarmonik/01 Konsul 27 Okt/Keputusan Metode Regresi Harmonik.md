@@ -19,6 +19,8 @@ tags: [statistika, regresi-harmonik, konsul]
 
 **Status:** Final. Berkas ARMA lama tetap disimpan (`hasil/kirim/*arma*`).
 
+**Pembaruan 25 Nov 2026:** seluruh 72 bulan dipakai menyusun model dan ramalan dibuat untuk 2026; tidak ada data uji. Rincian: [[Keputusan Ramal 2026 dan Dasar Penelitian]].
+
 **Terkait:** [[Berkas]]
 
 Induk: [[Konsul 27 Okt 2026]]

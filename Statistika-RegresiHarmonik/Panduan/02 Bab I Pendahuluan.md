@@ -44,25 +44,26 @@ Bab I menjawab satu pertanyaan: **kenapa penelitian ini perlu dilakukan?** Dosen
 - **Hati-hati:** jangan bilang SARIMA "lebih buruk". Yang tertulis hanya bahwa model kita lebih sederhana (tiga parameter). Klaim "ramalan SARIMA cenderung konstan" dibuang karena sumbernya (Aulia dkk., 2019) dilepas.
 
 ### Paragraf 7: celah penelitian
-- **Isi:** Penelitian hujan di Mataram sebelumnya memakai LSTM data harian (Hadinata dkk., 2026) dan regresi nonparametrik deret Fourier tiga stasiun (Astuti dkk., 2018). Kami memakai regresi harmonik parametrik univariat, OLS, 72 data bulanan BPS, diuji pada 2025 dengan RMSE dan MAE.
+- **Isi:** Penelitian hujan di Mataram sebelumnya memakai LSTM data harian (Hadinata dkk., 2026) dan regresi nonparametrik deret Fourier tiga stasiun (Astuti dkk., 2018). Kami melanjutkan Astuti dkk. (2018) dengan data BPS yang lebih baru dan mengikuti cara kerja Kusdarwati (2023): regresi harmonik orde satu, OLS dari 72 data bulanan, dinilai dengan R² dan RMSE (Kotarumalos dkk., 2025), lalu meramal 2026.
 - **Artinya:** Orang sudah meneliti hujan Mataram, tetapi dengan cara lain. Kami mengerjakan versi sederhana dengan data resmi bulanan.
 - **Alasan:** Bab I wajib menunjukkan "apa bedanya penelitian ini". *Parametrik* = bentuk rumus ditentukan dulu (sinus-kosinus), tinggal cari angkanya. *Nonparametrik* = bentuk rumus dibiarkan mengikuti data. *Univariat* = hanya satu variabel (curah hujan).
+- **Kenapa dua artikel itu:** dosen meminta satu atau dua penelitian terdahulu sebagai dasar, lalu diikuti dengan data berbeda ([[Keputusan Ramal 2026 dan Dasar Penelitian]]). Kusdarwati menulis bahwa daerah dengan satu periode ulang tahunan dapat dimodelkan dengan harmonik orde satu. Astuti meneliti kota yang sama dan memprediksi tahun 2017.
 
 ## 1.2 Rumusan masalah
-**"Bagaimana hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik?"** Satu pertanyaan.
+**"Bagaimana hasil peramalan curah hujan bulanan Kota Mataram tahun 2026 dengan model regresi harmonik?"** Satu pertanyaan.
 
 ## 1.3 Batasan masalah
-Lima batas: (1) hanya Kota Mataram; (2) Januari 2020–Desember 2025, 72 bulan; (3) data sekunder dari buku BPS, bukan unduhan langsung BMKG; (4) hanya regresi harmonik, tanpa suhu atau ENSO; (5) 60 bulan latih, 12 bulan uji. Batasan melindungi dari pertanyaan "kenapa tidak pakai X".
+Lima batas: (1) hanya Kota Mataram; (2) Januari 2020–Desember 2025, 72 bulan; (3) data sekunder dari buku BPS, bukan unduhan langsung BMKG; (4) hanya regresi harmonik, tanpa suhu atau ENSO; (5) seluruh 72 bulan dipakai menyusun model, dan ramalan 2026 belum bisa dicocokkan dengan data aktual. Batasan melindungi dari pertanyaan "kenapa tidak pakai X".
 
 ## 1.4 Tujuan
-Satu kalimat, sama dengan rumusan, diubah ke bentuk pernyataan: mengetahui hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik.
+Satu kalimat, sama dengan rumusan, diubah ke bentuk pernyataan: mengetahui hasil peramalan curah hujan bulanan Kota Mataram tahun 2026 dengan model regresi harmonik.
 
 ## 1.5 Manfaat
-Dua manfaat: contoh penerapan regresi harmonik dari data mentah sampai uji ramalan (lengkap dengan sumber dan keterbatasan), dan gambaran pola musiman (kapan puncak dan lembah, seberapa besar ayunan) untuk perencanaan pertanian dan kesiapsiagaan bencana.
+Dua manfaat: contoh penerapan regresi harmonik dari data mentah sampai ramalan 2026 (lengkap dengan sumber dan keterbatasan), dan gambaran pola musiman (kapan puncak dan lembah, seberapa besar ayunan) untuk perencanaan pertanian dan kesiapsiagaan bencana.
 
 ## Kalau ditanya dosen
 - *Kenapa regresi harmonik?* Hujan berpola 12 bulan; sinus-kosinus adalah alat paling sederhana untuk pola berulang; hanya tiga parameter.
-- *Apa bedanya dengan penelitian sebelumnya?* Data bulanan resmi BPS Kota Mataram enam tahun, model parametrik k = 1 yang bisa ditafsirkan, diuji pada 12 bulan terakhir.
+- *Apa bedanya dengan penelitian sebelumnya?* Data bulanan resmi BPS Kota Mataram enam tahun, model parametrik k = 1 yang bisa ditafsirkan, dan ramalan 2026. Dasarnya Kusdarwati (2023) dan Astuti dkk. (2018).
 - *Apa batasannya?* Satu variabel saja; faktor seperti El Niño tidak dimasukkan.
 
 Berikutnya: [[03 Bab II Kajian Pustaka]]

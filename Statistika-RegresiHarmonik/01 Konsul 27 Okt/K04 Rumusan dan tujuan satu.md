@@ -12,7 +12,7 @@ tags: [statistika, regresi-harmonik, konsul]
 
 **Status:** Selesai
 
-**Keterangan:** Rumusan: Bagaimana hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik? Tujuan: Mengetahui hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik. (diubah 30 Okt 2026; sebelumnya dua pertanyaan dalam satu kalimat).
+**Keterangan:** Rumusan: Bagaimana hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik? Tujuan: Mengetahui hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik. (diubah 30 Okt 2026; sebelumnya dua pertanyaan dalam satu kalimat). Diubah 25 Nov 2026: keduanya ditambah "tahun 2026" ([[Keputusan Ramal 2026 dan Dasar Penelitian]]).
 
 **Terkait:** [[Bab I Pendahuluan]]
 

@@ -5,6 +5,8 @@ tags: [statistika, regresi-harmonik, konsep]
 
 # Konsep: Baseline (Tebakan Orang Malas)
 
+> **Tidak dipakai lagi (25 Nov 2026).** Dua tebakan pembanding ini butuh data uji 2025, dan data uji ditiadakan karena dosen meminta langsung meramal 2026 ([[Keputusan Ramal 2026 dan Dasar Penelitian]]). Isi di bawah disimpan sebagai arsip.
+
 **Satu kalimat:** Baseline adalah pembanding paling sederhana; model yang rumit hanya berguna kalau mengalahkannya.
 
 ## Mengapa perlu

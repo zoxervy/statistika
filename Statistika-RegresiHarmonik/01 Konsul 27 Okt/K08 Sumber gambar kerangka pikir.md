@@ -12,7 +12,7 @@ tags: [statistika, regresi-harmonik, konsul]
 
 **Status:** Selesai
 
-**Keterangan:** Sumber: Diadaptasi dari alur Kusdarwati (2023) dan Purnama (2021).
+**Keterangan:** Sumber: Diadaptasi dari alur Kusdarwati (2023) dan Astuti dkk. (2018). Sejak 25 Nov 2026; sebelumnya Kusdarwati (2023) dan Purnama (2021) ([[Keputusan Ramal 2026 dan Dasar Penelitian]]).
 
 **Terkait:** [[Gambar 2.1 Kerangka Pemikiran]]
 

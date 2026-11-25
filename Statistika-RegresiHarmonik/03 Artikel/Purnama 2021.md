@@ -12,7 +12,7 @@ tags: [statistika, regresi-harmonik, artikel]
 |---|---|---|
 | Kab. Parigi Moutong, 82 bulan (Jan 2014–Okt 2020); latih 70, uji 12 | Regresi spektral untuk cek musiman, lalu SARIMA | SARIMA(1,1,0)(0,1,1)12; MAPE latih 12,02%, uji 16,46% |
 
-**Peran untuk penelitian ini:** Skema uji 12 bulan terakhir.
+**Peran untuk penelitian ini:** Bentuk hipotesis musiman (H₀: α = β = 0) dan contoh data hujan dari BPS. Skema uji 12 bulan terakhir tidak dipakai lagi sejak 25 Nov 2026 (arahan dosen: langsung ramal 2026, [[Keputusan Ramal 2026 dan Dasar Penelitian]]).
 
 *Isi diringkas dari abstrak resmi; jumlah data (82 bulan, latih 70, uji 12) dari isi PDF artikel (https://doi.org/10.22487/2540766X.2021.v18.i2.15652).*
 

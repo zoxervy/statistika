@@ -13,7 +13,7 @@ Naskah asli: [[Abstrak dan Kata Pengantar]]. Prasyarat: [[00 Mulai Di Sini]].
 - **Anggota:** Ahmad Yusuf, Gracia Yusti Euaggelion, Raudhatul Athfal. NIM: [[NIM Anggota (lokal)]].
 - **Kampus:** S1 Ilmu Komputer, Fakultas Teknik, Universitas Bumigora.
 
-Cara membaca judul: "Analisis" = bagian deskriptif (merangkum 72 angka). "Peramalan" = bagian menebak 2025. "Regresi Harmonik" = alat tebaknya.
+Cara membaca judul: "Analisis" = bagian deskriptif (merangkum 72 angka). "Peramalan" = bagian menebak 2026. "Regresi Harmonik" = alat tebaknya.
 
 ## Abstrak
 Abstrak adalah ringkasan satu halaman supaya pembaca tahu isi laporan tanpa membaca semuanya. Dosen minta **empat paragraf**, dan abstrak **terpisah** dari kata pengantar ([[K01 Abstrak dan Kata Pengantar dipisah]], [[K02 Abstrak empat paragraf]]).
@@ -24,17 +24,17 @@ Abstrak adalah ringkasan satu halaman supaya pembaca tahu isi laporan tanpa memb
 - **Alasan:** Dua angka itu memperlihatkan jaraknya (sekitar 8 kali lipat) sehingga alasan butuh model terasa nyata. Keduanya dihitung dari 6 nilai Desember dan 6 nilai Juli di data.
 
 ### Paragraf 2: tujuan
-- **Isi:** Mengetahui hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik.
-- **Artinya:** Satu pertanyaan saja: seberapa bagus tebakan model gelombang ini.
+- **Isi:** Mengetahui hasil peramalan curah hujan bulanan Kota Mataram tahun 2026 dengan model regresi harmonik.
+- **Artinya:** Satu pertanyaan saja: berapa tebakan model gelombang ini untuk tiap bulan 2026, dan seberapa cocok model itu dengan data yang ada.
 - **Alasan:** Dosen minta rumusan dan tujuan masing-masing satu ([[K04 Rumusan dan tujuan satu]]). Kalimat tujuan sengaja sama dengan rumusan masalah di Bab I.
 
 ### Paragraf 3: metode
-- **Isi:** 72 data, dibagi 60 latih dan 12 uji; statistik deskriptif; variabel sinus dan kosinus periode 12 bulan; OLS dengan uji F; RMSE dan MAE terhadap ramalan sederhana.
+- **Isi:** 72 data, semuanya dipakai menyusun model; statistik deskriptif; variabel sinus dan kosinus periode 12 bulan; OLS dengan uji F; R² dan RMSE; ramalan 12 bulan 2026.
 - **Artinya:** Urutan kerja dalam satu kalimat panjang. Detail tiap langkah ada di Bab III.
 - **Alasan:** Tidak menyebut uji lain (ADF, Ljung-Box, uji t) karena sudah dibuang demi sederhana ([[Konsep Estimasi OLS]], [[Konsep Hipotesis dan Uji F]]).
 
 ### Paragraf 4: rencana hasil
-- **Isi:** Laporan ini memuat Bab I–III. Hasil yang akan diperoleh: persamaan, amplitudo, fase, RMSE, MAE.
+- **Isi:** Laporan ini memuat Bab I–III. Hasil yang akan diperoleh: persamaan, amplitudo, fase, R², RMSE, dan ramalan 2026.
 - **Artinya:** Jujur bahwa angka hasil belum ada di laporan ini.
 - **Alasan:** Laporan berhenti di Bab III, jadi paragraf ini berbentuk rencana, bukan hasil. Jangan diubah menjadi kalimat berisi angka hasil.
 

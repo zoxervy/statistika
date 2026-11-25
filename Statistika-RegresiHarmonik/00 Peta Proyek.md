@@ -28,13 +28,13 @@ flowchart LR
 - **Progres terbaru:** [[Catatan Progres 31 Okt 2026]]
 - **Skrip build:** folder `build/` ([[README]]): `buat_xlsx.py` dan `buat_docx.py`
 - **Aturan kerja:** [[Aturan Kerja]] (jangan build ulang jika tidak disuruh)
-- **Konsultasi Dosen:** [[Konsul 27 Okt 2026]] (14 catatan keputusan dosen, seluruhnya terintegrasi)
+- **Konsultasi Dosen:** [[Konsul 27 Okt 2026]] (14 catatan keputusan dosen, seluruhnya terintegrasi); arahan 25 Nov 2026: [[Keputusan Ramal 2026 dan Dasar Penelitian]]
 - **Naskah Laporan:** [[Status Laporan Revisi]], [[Abstrak dan Kata Pengantar]], [[Bab I Pendahuluan]], [[Bab II Kajian Pustaka]], [[Bab III Metode Penelitian]], [[Daftar Pustaka]], [[Lampiran]]
-- **Kerangka Pemikiran:** [[Gambar 2.1 Kerangka Pemikiran]] (diadaptasi dari alur Kusdarwati 2023 dan Purnama 2021)
+- **Kerangka Pemikiran:** [[Gambar 2.1 Kerangka Pemikiran]] (diadaptasi dari alur Kusdarwati 2023 dan Astuti 2018)
 - **Artikel Terkait:** [[Tabel 2.1 Penelitian Terdahulu]] (15 artikel 2016–2026), [[Artikel Tidak Dipakai]]
 - **Buku Teori:** [[Sudaryono 2021]], [[Rujukan Lain]]; dilepas: [[Wilks 2019]]
 - **Data & Analisis:** [[Data BPS 72 Bulan]], [[Revisi BPS 2024]], [[Catatan Kualitas Data]]
-- **Metode Analisis:** [[Alur Regresi Harmonik]] (4 langkah: matriks, statistik deskriptif, sin/cos + OLS + uji F, ramalan 2025)
+- **Metode Analisis:** [[Alur Regresi Harmonik]] (4 langkah: matriks, statistik deskriptif, sin/cos + OLS + uji F, R²/RMSE dan ramalan 2026)
 - **Status & Panduan:** [[Daftar Tugas]], [[Log Verifikasi]], [[Pertanyaan Terbuka]]
 - **Tim:** [[Anggota Kelompok]]
 - **Panduan Pemahaman Mahasiswa (Bahasa Manusia):** [[00 Mulai Di Sini]] (folder `Panduan/`)
@@ -42,7 +42,8 @@ flowchart LR
 - **Revisi berikutnya (belum dikerjakan):** [[Revisi Berikutnya]]
 
 ## Angka Kunci Penelitian (Data dan Rancangan)
-- **Periode Data:** n = 72 bulan (Januari 2020 – Desember 2025). Pembagian: 60 bulan data latih (2020–2024), 12 bulan data uji (2025).
+- **Periode Data:** n = 72 bulan (Januari 2020 – Desember 2025). Seluruhnya dipakai menyusun model; ramalan untuk 12 bulan tahun 2026.
 - **Statistik Deskriptif:** Mean 174,80 mm, Median 173,70 mm, Modus 0,00 mm, Simpangan Baku Sampel 135,35 mm.
 - **Model:** Regresi Harmonik orde k=1 (periode T = 12 bulan), $Y_t = b_0 + b_1 \sin(2\pi t/12) + b_2 \cos(2\pi t/12) + \varepsilon_t$, estimasi OLS.
-- **Evaluasi yang direncanakan:** RMSE dan MAE pada data uji 2025 terhadap ramalan sederhana.
+- **Penilaian yang direncanakan:** R² dan RMSE pada 72 bulan data, plot data terhadap nilai duga, lalu ramalan Januari–Desember 2026.
+- **Dasar penelitian:** Kusdarwati (2023) untuk alur metode dan Astuti dkk. (2018) untuk Kota Mataram yang dilanjutkan.

@@ -8,7 +8,7 @@ tags: [statistika, regresi-harmonik, konsul]
 
 **Catatan Dosen / Pertimbangan:** "yang bab 2 dikoreksi habis'an karna gada referensi nya"
 
-**Keputusan:** Seluruh definisi, rumus mean, median, modus, simpangan baku sampel, persamaan regresi harmonik, uji F/t, dan RMSE/MAE diberi sitasi buku/jurnal.
+**Keputusan:** Seluruh definisi, rumus mean, median, modus, simpangan baku sampel, persamaan regresi harmonik, uji F, serta R² dan RMSE diberi sitasi buku/jurnal.
 
 **Status:** Selesai
 

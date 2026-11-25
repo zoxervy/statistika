@@ -36,7 +36,7 @@ Permata dkk. (2024): enam pos di Surabaya; model dipilih lewat RMSE terkecil.
 - Sebagian besar studi peramalan memakai SARIMA atau pembelajaran mesin.
 
 ## Perbedaan penelitian kita
-Data bulanan resmi BPS Kota Mataram enam tahun; regresi harmonik k = 1 dengan tiga parameter yang ditafsirkan lewat amplitudo dan fase; ramalan diuji pada 12 bulan 2025 terhadap tebakan sederhana. Kalimat aman: "model harmonik parametrik univariat pada data bulanan BPS Kota Mataram belum kami temukan". Jangan menulis "belum pernah ada".
+Data bulanan resmi BPS Kota Mataram enam tahun; regresi harmonik k = 1 dengan tiga parameter yang ditafsirkan lewat amplitudo dan fase; ramalan 12 bulan 2026 dari model yang memakai semua data. Dasar: Kusdarwati (2023) dan Astuti dkk. (2018) ([[Keputusan Ramal 2026 dan Dasar Penelitian]]). Kalimat aman: "model harmonik parametrik univariat pada data bulanan BPS Kota Mataram belum kami temukan". Jangan menulis "belum pernah ada".
 
 ## Hati-hati
 - Baris Zega dan Aulia Putri menyebut ADF atau stasioneritas. Itu isi artikel mereka, bukan metode kita.

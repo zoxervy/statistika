@@ -3,29 +3,25 @@ tipe: panduan
 tags: [statistika, regresi-harmonik, konsep]
 ---
 
-# Konsep: Data Latih dan Data Uji
+# Konsep: Data Latih dan Data Uji (tidak dipakai lagi)
 
-**Satu kalimat:** Data latih dipakai untuk membuat rumus; data uji disimpan dulu lalu dipakai untuk memeriksa rumus itu pada data yang belum pernah dilihat.
+**Satu kalimat:** Data latih dipakai membuat rumus dan data uji disimpan untuk memeriksa rumus itu. Sejak 25 Nov 2026 penelitian ini tidak membagi data: seluruh 72 bulan dipakai membuat rumus, lalu rumus langsung meramal 2026 ([[Keputusan Ramal 2026 dan Dasar Penelitian]]).
 
 ## Analogi ujian
-Latihan soal = data latih. Ujian dengan soal baru = data uji. Kalau soal ujian sudah dipakai berlatih, nilainya tidak membuktikan apa-apa.
+Latihan soal = data latih. Ujian dengan soal baru = data uji. Rencana lama menyimpan hujan 2025 sebagai soal ujian. Dosen meminta semua soal dipakai untuk berlatih, lalu menebak soal tahun depan (2026) yang jawabannya belum ada.
 
-## Pembagian di penelitian ini
+## Pemakaian data sekarang
 | Bagian | Bulan | Jumlah | Nomor t |
 |---|---|---|---|
-| Data latih | Januari 2020–Desember 2024 | 60 | 0 sampai 59 |
-| Data uji | Januari 2025–Desember 2025 | 12 | 60 sampai 71 |
+| Data untuk membuat rumus | Januari 2020–Desember 2025 | 72 | 0 sampai 71 |
+| Ramalan | Januari 2026–Desember 2026 | 12 | 72 sampai 83 |
 
-Pembagian menurut **urutan waktu**, tidak diacak ([[Konsep Deret Waktu dan Pola Musiman]]).
+## Akibatnya
+- R² dan RMSE dihitung dari 72 bulan yang sama dengan yang dipakai membuat rumus. Angka itu mengukur **kecocokan**, bukan akurasi ramalan ([[Konsep R-Squared dan Goodness of Fit]], [[Konsep RMSE dan MAE]]).
+- Akurasi ramalan 2026 baru bisa dicek setelah BPS menerbitkan *Kota Mataram dalam Angka 2027*, yang memuat data 2026.
+- Cara ini sama dengan penelitian dasar Kusdarwati (2023), yang menilai model dari plot data terhadap nilai duga dan AIC, tanpa data uji.
 
-## Apa yang dilakukan pada tiap bagian
-- Data latih: mencari b₀, b₁, b₂ (OLS) dan menguji gelombang dengan uji F.
-- Data uji: **tidak ikut** pencarian itu. Setelah rumus jadi, masukkan t = 60 sampai 71 untuk mendapat 12 ramalan, lalu bandingkan dengan 12 hujan sebenarnya.
+## Kalau ditanya dosen atau teman
+*Kenapa tidak disisakan data uji?* Arahan dosen: langsung meramal 2026. Keterbatasannya ditulis terus terang di Bab II 2.5.
 
-## Mengapa 12 bulan
-12 bulan = satu putaran musim penuh (hujan, peralihan, kemarau, kembali ke hujan). Penelitian lain juga menguji pada 12 bulan terakhir (Purnama, 2021).
-
-## Batas yang harus diakui
-Hanya satu tahun uji, jadi hasilnya bisa dipengaruhi kebetulan tahun itu. Kalau 2025 tidak biasa, hasil uji tidak mewakili tahun-tahun lain. Ini keterbatasan, bukan kesalahan.
-
-Rujukan: Purnama (2021). Dipakai di: [[Bab II Kajian Pustaka]] (2.5), [[Bab III Metode Penelitian]] (3.9). Kembali: [[00 Mulai Di Sini]].
+Dulu dipakai di: [[Bab II Kajian Pustaka]] (2.5) dan [[Bab III Metode Penelitian]] (3.9) dengan rujukan Purnama (2021). Kembali: [[00 Mulai Di Sini]].

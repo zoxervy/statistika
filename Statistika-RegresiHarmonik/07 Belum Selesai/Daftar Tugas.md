@@ -39,5 +39,13 @@ Lingkup: laporan Bab I–III, Daftar Pustaka, Lampiran A dan B. Tidak ada Bab IV
 - [x] Bab I par. 1: "sumber daya air" dan kekeringan kini bersitasi Aulia Putri dkk. (2026); pertanian ditambah Hadinata dkk. (2026) (1 Nov).
 - [ ] Varians sampel: tidak wajib; tambahkan hanya bila dosen minta ([[Konsep Varians Sampel]]).
 
+## 5. Revisi ramal 2026 (25 Nov 2026, [[Keputusan Ramal 2026 dan Dasar Penelitian]])
+- [x] Vault: Abstrak par. 2–4; Bab I par. 7, 1.2, 1.3 butir 5, 1.4, 1.5; Bab II 2.4 (alasan k = 1), 2.5 (jadi Ukuran Kecocokan Model), 2.6, 2.7; Bab III 3.2, 3.5 (pencilan Desember 2024), 3.9.
+- [x] Gambar 2.1 (sumber adaptasi Kusdarwati dan Astuti), Alur Regresi Harmonik, Data BPS 72 Bulan bagian 4, Tabel 2.1 (dasar penelitian), Peta, START, kanvas, catatan konsul K02, K04, K08, K10.
+- [x] Panduan 00–04 dan Konsep (Data Latih dan Data Uji, RMSE, Baseline, R², Uji F, OLS, Deret Waktu, Penelitian Terdahulu).
+- [x] Teks `build/buat_docx.py` disamakan dengan vault (tidak dijalankan).
+- [ ] Docx: belum diubah. Bagian yang perlu disamakan sama dengan daftar vault di atas; tunggu perintah.
+- [ ] Judul laporan masih "... Tahun 2020–2025 dan Peramalan dengan Model Regresi Harmonik". Tambah "Tahun 2026" hanya kalau kelompok mau.
+
 Kembali: [[00 Peta Proyek]]
 - [x] OCR Susilokarti (1 Nov 2026): abstrak cocok dengan isi, kecuali angka MSE 14,92 yang hanya ada di abstrak; dibuang dari Tabel 2.1.

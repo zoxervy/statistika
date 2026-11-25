@@ -22,8 +22,8 @@ OLS melakukan hal yang sama dengan tiga angka sekaligus, tetapi menghitungnya la
 Supaya selisih positif dan negatif tidak saling menghapus, dan supaya selisih besar dihukum lebih berat daripada selisih kecil.
 
 ## Dipakai pada bagian mana
-- Hanya pada **60 bulan data latih** (2020–2024). Data 2025 tidak ikut.
+- Pada **seluruh 72 bulan** (2020–2025), sesuai arahan dosen ([[Keputusan Ramal 2026 dan Dasar Penelitian]]).
 - Dikerjakan di Python (statsmodels). Excel Bab III hanya memuat data dan statistik deskriptif, tidak memuat regresi.
-- Setelah b ditemukan, tahap berikutnya adalah menguji apakah gelombangnya nyata ([[Konsep Hipotesis dan Uji F]]) dan meramal 2025.
+- Setelah b ditemukan, tahap berikutnya adalah menguji apakah gelombangnya nyata ([[Konsep Hipotesis dan Uji F]]) dan meramal 2026.
 
 Rujukan: Astuti dkk. (2018) (Kota Mataram, estimasi OLS pada regresi deret Fourier) dan Kotarumalos dkk. (2025). Dipakai di: [[Bab II Kajian Pustaka]] (2.4), [[Bab III Metode Penelitian]] (3.9 langkah 3). Kembali: [[00 Mulai Di Sini]].

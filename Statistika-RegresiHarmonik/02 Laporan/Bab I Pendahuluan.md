@@ -26,24 +26,24 @@ Regresi harmonik memodelkan pola periodik dengan fungsi sinus dan kosinus dari w
 Model ARIMA musiman (SARIMA) banyak dipakai dalam peramalan curah hujan, antara lain oleh Purnama (2021) dan Aulia Putri dkk. (2026). Kusdarwati (2023) memodelkan komponen musiman lebih dulu dengan fungsi harmonik. Dibandingkan model SARIMA, regresi harmonik orde pertama (k = 1) hanya memerlukan tiga parameter, dapat ditafsirkan melalui amplitudo dan fase, serta menghasilkan kurva ramalan yang tetap mengikuti siklus tahunan (Kusdarwati, 2023; Zega & Mardiningsih, 2025).
 
 **Paragraf 7 (Penelitian di Mataram dan posisi penelitian ini):**  
-Penelitian curah hujan di Kota Mataram sebelumnya memakai LSTM dengan data harian BMKG (Hadinata dkk., 2026) dan regresi nonparametrik deret Fourier pada tiga stasiun untuk prediksi tahun 2017 (Astuti dkk., 2018). Penelitian ini memakai regresi harmonik parametrik univariat dengan estimasi *Ordinary Least Squares* (OLS) pada 72 data bulanan resmi BPS (2020–2025). Ramalannya diuji pada 12 bulan terakhir (tahun 2025) seperti pada Purnama (2021), lalu akurasinya diukur dengan RMSE dan MAE dan dibandingkan dengan ramalan sederhana. Laporan ini memuat Bab I sampai Bab III.
+Penelitian curah hujan di Kota Mataram sebelumnya memakai LSTM dengan data harian BMKG (Hadinata dkk., 2026) dan regresi nonparametrik deret Fourier pada tiga stasiun untuk prediksi tahun 2017 (Astuti dkk., 2018). Penelitian ini melanjutkan Astuti dkk. (2018) dengan data Kota Mataram yang lebih baru, yaitu 72 data bulanan resmi BPS (2020–2025), dan mengikuti alur Kusdarwati (2023): daerah dengan satu periode ulang tahunan dapat dimodelkan dengan regresi harmonik orde pertama. Koefisien ditaksir dengan *Ordinary Least Squares* (OLS) dari seluruh data, kecocokan model dinilai dengan R² dan RMSE seperti pada Kotarumalos dkk. (2025), lalu model dipakai meramal curah hujan bulanan tahun 2026. Laporan ini memuat Bab I sampai Bab III.
 
 ---
 
 ## 1.2 Rumusan Masalah ([[K04 Rumusan dan tujuan satu]])
-Bagaimana hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik?
+Bagaimana hasil peramalan curah hujan bulanan Kota Mataram tahun 2026 dengan model regresi harmonik?
 
 ## 1.3 Batasan Masalah
 1. Lokasi hanya Kota Mataram, Provinsi Nusa Tenggara Barat.
 2. Periode Januari 2020 sampai Desember 2025, 72 pengamatan bulanan.
 3. Data sekunder dari publikasi BPS Kota Mataram (*Kota Mataram dalam Angka* edisi 2021–2026), tidak diunduh langsung dari portal BMKG.
 4. Metode hanya regresi harmonik univariat; variabel meteorologi lain seperti suhu, tekanan udara, dan indeks ENSO tidak dimasukkan.
-5. Data latih Januari 2020 sampai Desember 2024 (60 bulan), data uji 2025 (12 bulan).
+5. Seluruh 72 data dipakai menyusun model. Ramalan dibuat untuk Januari sampai Desember 2026 dan belum dapat dibandingkan dengan data aktual karena data 2026 belum terbit.
 
 ## 1.4 Tujuan Penelitian ([[K04 Rumusan dan tujuan satu]])
-Mengetahui hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik.
+Mengetahui hasil peramalan curah hujan bulanan Kota Mataram tahun 2026 dengan model regresi harmonik.
 
 ## 1.5 Manfaat Penelitian
-Memberi contoh penerapan regresi harmonik pada data curah hujan bulanan resmi, dari data mentah sampai pengujian ramalan, lengkap dengan sumber dan keterbatasan data, serta gambaran pola musiman curah hujan Kota Mataram (waktu puncak dan lembah, serta besar ayunannya) yang dapat dipakai untuk perencanaan pertanian dan kesiapsiagaan bencana.
+Memberi contoh penerapan regresi harmonik pada data curah hujan bulanan resmi, dari data mentah sampai ramalan tahun 2026, lengkap dengan sumber dan keterbatasan data, serta gambaran pola musiman curah hujan Kota Mataram (waktu puncak dan lembah, serta besar ayunannya) yang dapat dipakai untuk perencanaan pertanian dan kesiapsiagaan bencana.
 
 Berikutnya: [[Bab II Kajian Pustaka]]

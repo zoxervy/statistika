@@ -16,6 +16,11 @@ tags: [statistika, regresi-harmonik, artikel]
 
 **Peran untuk penelitian ini:** Penerapan deret Fourier pada curah hujan di lokasi yang sama (Kota Mataram).
 
+**Dasar penelitian (sejak 25 Nov 2026, [[Keputusan Ramal 2026 dan Dasar Penelitian]]).** Dibaca dari teks PDF:
+- Data: curah hujan Kota Mataram 2008–2017 dari BMKG, tiga pos hujan; tujuan menentukan prediksi curah hujan Kota Mataram tahun 2017 (abstrak).
+- Metode: regresi nonparametrik deret Fourier, parameter ditaksir dengan OLS, jumlah K dipilih dari GCV minimum; R² dilaporkan untuk tiap K (Tabel 1). Pada pos Selaparang, K dengan GCV minimum (K = 1) hanya memberi R² 0,002017, sehingga K dipilih dari nilai R² (K = 101, R² 0,959116).
+- Yang dilanjutkan: lokasi Kota Mataram dan gagasan meramal tahun berikutnya, dengan data BPS 2020–2025 dan ramalan 2026. Yang berbeda: penelitian ini parametrik (k = 1, tiga parameter), bukan nonparametrik dengan K besar.
+
 *Isi diringkas dari abstrak resmi artikel (https://doi.org/10.29303/emj.v2i2.16).*
 
 Naik ke: [[Tabel 2.1 Penelitian Terdahulu]]

@@ -88,8 +88,6 @@ _wet = df[df.bulan.isin([11, 12, 1, 2, 3, 4])].curah_hujan_mm.mean()
 
 _dry = df[~df.bulan.isin([11, 12, 1, 2, 3, 4])].curah_hujan_mm.mean()
 
-_latih = df.curah_hujan_mm.values[:60].mean()
-
 c1 = lambda x: f"{x:.1f}".replace(".", ",")
 
 c2 = lambda x: f"{x:.2f}".replace(".", ",")
@@ -110,10 +108,10 @@ PUSTAKA_H = [re.sub(r"\*(.+?)\*", r"<i>\1</i>", e.strip()) for e in _dp.split("\
 
 def gambar_kerangka_harmonik():
     kotak = [("Data curah hujan bulanan\nKota Mataram, 72 bulan\n(BPS, asal BMKG)", 0, 1),
-             ("Pembagian data\nlatih 60 bulan (2020-2024)\nuji 12 bulan (2025)", 1, 1),
-             ("Statistik deskriptif", 2, 1),
-             ("Fitur sin dan cos\nperiode 12 bulan;\nestimasi OLS dan uji F", 2, 0),
-             ("Ramalan 12 bulan 2025;\nRMSE dan MAE terhadap\nramalan sederhana", 1, 0)]
+             ("Statistik deskriptif", 1, 1),
+             ("Fitur sin dan cos\nperiode 12 bulan;\nOLS dari 72 bulan\ndan uji F", 2, 1),
+             ("Kecocokan model:\nR² dan RMSE;\nplot data dan\nnilai duga", 2, 0),
+             ("Amplitudo dan fase;\nramalan 12 bulan\ntahun 2026", 1, 0)]
     f, a = plt.subplots(figsize=(7.0, 3.2)); a.set_xlim(-0.55, 2.55); a.set_ylim(-0.5, 1.5); a.axis("off")
     for t, x, r in kotak:
         a.add_patch(FancyBboxPatch((x - 0.40, r - 0.30), 0.80, 0.60, boxstyle="round,pad=0.02", fc="#FFFFFF", ec="#1F2A36", lw=1.6))
@@ -432,12 +430,12 @@ class Harmonik(Revisi):
         self.h1("ABSTRAK", "front")
         self.para(f"Curah hujan Kota Mataram berpola musiman: rata-rata Desember 2020-2025 sebesar {c1(_rb[12])} mm, sedangkan Juli hanya {c1(_rb[7])} mm. "
                   "Besarnya curah hujan bulanan berdampak pada pertanian, ketersediaan air, dan risiko banjir maupun kekeringan, sehingga diperlukan model yang dapat menggambarkan dan meramalkan pola musimannya.")
-        self.para("Penelitian ini bertujuan mengetahui hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik.")
+        self.para("Penelitian ini bertujuan mengetahui hasil peramalan curah hujan bulanan Kota Mataram tahun 2026 dengan model regresi harmonik.")
         self.para("Data sekunder berupa 72 pengamatan bulanan Januari 2020 sampai Desember 2025 dari Tabel 1.2.1 publikasi <i>Kota Mataram dalam Angka</i> 2021 sampai 2026 (data asal BMKG). "
-                  "Data dibagi urut waktu menjadi 60 bulan data latih (2020-2024) dan 12 bulan data uji (2025). Tahapannya statistik deskriptif, "
+                  "Seluruh 72 data dipakai menyusun model. Tahapannya statistik deskriptif, "
                   "pembentukan variabel sinus dan kosinus berperiode 12 bulan, estimasi <i>Ordinary Least Squares</i> dengan uji F, "
-                  "serta pengukuran RMSE dan MAE terhadap ramalan sederhana.")
-        self.para("Laporan ini memuat Bab I sampai Bab III. Hasil yang akan diperoleh berupa persamaan regresi harmonik dengan amplitudo dan fase musiman, serta nilai RMSE dan MAE pada data uji 2025 dibandingkan dengan ramalan sederhana.")
+                  "penilaian kecocokan model dengan R^{2} dan RMSE, lalu peramalan 12 bulan tahun 2026.")
+        self.para("Laporan ini memuat Bab I sampai Bab III. Hasil yang akan diperoleh berupa persamaan regresi harmonik dengan amplitudo dan fase musiman, nilai R^{2} dan RMSE, serta ramalan curah hujan bulanan Januari sampai Desember 2026.")
         self.para("<b>Kata kunci:</b> curah hujan, Kota Mataram, deret waktu, regresi harmonik, deret Fourier, RMSE", indent=False)
 
         # ===== kata pengantar =====
@@ -447,7 +445,7 @@ class Harmonik(Revisi):
         self.para("Laporan memuat Bab I Pendahuluan, Bab II Kajian Pustaka, dan Bab III Metode Penelitian. Seluruh data curah hujan bersumber dari BMKG dan dimuat dalam publikasi resmi BPS Kota Mataram; "
                   "tidak ada angka yang diisi atau diperkirakan sendiri. Hal yang tidak lazim pada sumber data dicatat pada Bab III.")
         self.para("Penulis berterima kasih kepada Ibu Siti Soraya, M.Si selaku dosen pengampu atas arahan dan koreksi selama konsultasi, serta terbuka terhadap masukan untuk perbaikan laporan ini.")
-        self.para("Mataram, Oktober 2026", indent=False, align="l")
+        self.para("Mataram, November 2026", indent=False, align="l")
         self.para("Penulis", indent=False, align="l")
 
         # ===== daftar isi / tabel / gambar (field Word) =====
@@ -479,23 +477,23 @@ class Harmonik(Revisi):
             "Analisis spektral pada curah hujan Kota Bandung dan Kota Jayapura juga menemukan periode dominan sekitar 12 bulan (Habinuddin dkk., 2019; Tulak dkk., 2022), dan periodogram curah hujan bulanan tiga kota di Jawa Timur menunjukkan periode musiman satu tahun (Kusdarwati, 2023).",
             "Model ARIMA musiman (SARIMA) banyak dipakai dalam peramalan curah hujan, antara lain oleh Purnama (2021) dan Aulia Putri dkk. (2026). "
             "Kusdarwati (2023) memodelkan komponen musiman lebih dulu dengan fungsi harmonik, baru kemudian memeriksa autokorelasi residualnya. "
-            "Dibandingkan model SARIMA, regresi harmonik orde pertama (k = 1) hanya memerlukan tiga parameter, dapat ditafsirkan melalui amplitudo dan fase, serta menghasilkan kurva ramalan yang tetap mengikuti siklus tahunan.",
+            "Dibandingkan model SARIMA, regresi harmonik orde pertama (k = 1) hanya memerlukan tiga parameter, dapat ditafsirkan melalui amplitudo dan fase, serta menghasilkan kurva ramalan yang tetap mengikuti siklus tahunan (Kusdarwati, 2023; Zega & Mardiningsih, 2025).",
             "Penelitian curah hujan di Kota Mataram sebelumnya memakai LSTM dengan data harian BMKG (Hadinata dkk., 2026) dan regresi nonparametrik deret Fourier pada tiga stasiun untuk prediksi tahun 2017 (Astuti dkk., 2018). "
-            "Penelitian ini memakai regresi harmonik parametrik univariat dengan estimasi <i>Ordinary Least Squares</i> (OLS) pada 72 data bulanan resmi BPS (2020-2025). "
-            "Ramalannya diuji pada 12 bulan terakhir (tahun 2025) seperti pada Purnama (2021), lalu akurasinya diukur dengan RMSE dan MAE dan dibandingkan dengan ramalan sederhana. Laporan ini memuat Bab I sampai Bab III.",
+            "Penelitian ini melanjutkan Astuti dkk. (2018) dengan data Kota Mataram yang lebih baru, yaitu 72 data bulanan resmi BPS (2020-2025), dan mengikuti alur Kusdarwati (2023): daerah dengan satu periode ulang tahunan dapat dimodelkan dengan regresi harmonik orde pertama. "
+            "Koefisien ditaksir dengan <i>Ordinary Least Squares</i> (OLS) dari seluruh data, kecocokan model dinilai dengan R^{2} dan RMSE seperti pada Kotarumalos dkk. (2025), lalu model dipakai meramal curah hujan bulanan tahun 2026. Laporan ini memuat Bab I sampai Bab III.",
         ]: self.para(t)
         self.h2("1.2", "Rumusan Masalah")
-        self.para("Bagaimana hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik?")
+        self.para("Bagaimana hasil peramalan curah hujan bulanan Kota Mataram tahun 2026 dengan model regresi harmonik?")
         self.h2("1.3", "Batasan Masalah")
         self.lst(["Lokasi hanya Kota Mataram, Provinsi Nusa Tenggara Barat.",
                   "Periode Januari 2020 sampai Desember 2025, 72 pengamatan bulanan.",
                   "Data sekunder dari publikasi BPS Kota Mataram (<i>Kota Mataram dalam Angka</i> edisi 2021-2026), tidak diunduh langsung dari portal BMKG.",
                   "Metode hanya regresi harmonik univariat; variabel meteorologi lain seperti suhu, tekanan udara, dan indeks ENSO tidak dimasukkan.",
-                  "Data latih Januari 2020 sampai Desember 2024 (60 bulan), data uji 2025 (12 bulan)."], numbered=False)
+                  "Seluruh 72 data dipakai menyusun model. Ramalan dibuat untuk Januari sampai Desember 2026 dan belum dapat dibandingkan dengan data aktual karena data 2026 belum terbit."], numbered=False)
         self.h2("1.4", "Tujuan Penelitian")
-        self.para("Mengetahui hasil peramalan curah hujan bulanan Kota Mataram dengan model regresi harmonik.")
+        self.para("Mengetahui hasil peramalan curah hujan bulanan Kota Mataram tahun 2026 dengan model regresi harmonik.")
         self.h2("1.5", "Manfaat Penelitian")
-        self.para("Memberi contoh penerapan regresi harmonik pada data curah hujan bulanan resmi, dari data mentah sampai pengujian ramalan, lengkap dengan sumber dan keterbatasan data, "
+        self.para("Memberi contoh penerapan regresi harmonik pada data curah hujan bulanan resmi, dari data mentah sampai ramalan tahun 2026, lengkap dengan sumber dan keterbatasan data, "
                   "serta gambaran pola musiman curah hujan Kota Mataram (waktu puncak dan lembah, serta besar ayunannya) yang dapat dipakai untuk perencanaan pertanian dan kesiapsiagaan bencana.")
 
         # ===== BAB II =====
@@ -512,16 +510,18 @@ class Harmonik(Revisi):
         self.h2("2.4", "Regresi Harmonik")
         self.para("Regresi harmonik memakai fungsi sinus dan kosinus (deret Fourier) untuk memodelkan pola periodik (Kusdarwati, 2023; Zega & Mardiningsih, 2025). Untuk data bulanan dengan periode T = 12 bulan, frekuensi sudutnya ω = 2π/12, dan model orde pertama (k = 1) adalah:")
         self.eq("Y_{t} = b_{0} + b_{1} sin(2πt/12) + b_{2} cos(2πt/12) + ε_{t}")
-        self.para("dengan Y_{t} curah hujan bulan ke-t, b_{0} intersep, b_{1} dan b_{2} koefisien sinus dan kosinus, serta ε_{t} galat acak dengan rata-rata nol. "
+        self.para("dengan Y_{t} curah hujan bulan ke-t, b_{0} intersep, b_{1} dan b_{2} koefisien sinus dan kosinus, serta ε_{t} galat acak dengan rata-rata nol. Orde pertama dipakai karena curah hujan di daerah yang hanya memiliki satu periode ulang, misalnya satu tahun, dapat dimodelkan dengan harmonik orde satu (Kusdarwati, 2023). "
                   "Koefisien ditaksir dengan <i>Ordinary Least Squares</i> (OLS), yaitu meminimalkan jumlah kuadrat galat (Astuti dkk., 2018; Kotarumalos dkk., 2025). Analisis harmonik memberikan informasi frekuensi dan amplitudo siklus (Zega & Mardiningsih, 2025). Bentuk gelombangnya ditafsirkan melalui amplitudo A (setengah jarak puncak ke lembah) dan fase φ (letak puncak dalam setahun); rumusnya diturunkan dari identitas trigonometri:")
         self.eq("A = √(b_{1}^{2} + b_{2}^{2})        φ = atan2(b_{1}, b_{2})        puncak pada t = φ/ω")
         self.para("Pengaruh gelombang tahunan diuji dengan uji F. Hipotesis nolnya H_{0}: b_{1} = b_{2} = 0 (tidak ada pola musiman) dan hipotesis alternatifnya H_{1}: paling sedikit satu dari $b_1$, $b_2$ tidak nol (ada pola musiman), pada taraf α = 0,05. Bentuk hipotesis yang sama dipakai untuk menguji ada atau tidaknya pola musiman pada curah hujan oleh Darmawan dkk. (2017) dan Purnama (2021), dan uji F dibaca dari keluaran regresi pada Excel oleh Azmi dkk. (2020). Darmawan dkk. (2017) memakai statistik F berderajat bebas (2, n − 3) untuk pasangan koefisien kosinus dan sinus.")
-        self.h2("2.5", "Ukuran Akurasi Peramalan")
-        self.para("Akurasi ramalan diukur pada data uji yang tidak dipakai saat menaksir parameter (Purnama, 2021; Hadinata dkk., 2026). "
-                  "Ukuran yang dipakai adalah <i>Root Mean Square Error</i> (RMSE) dan <i>Mean Absolute Error</i> (MAE) antara nilai aktual (A_{t}) dan ramalan (F_{t}) pada m bulan data uji; makin kecil nilainya, makin akurat ramalannya. "
-                  "RMSE juga dipakai sebagai kriteria pemilihan model oleh Permata dkk. (2024).")
-        self.eq("RMSE = √[ Σ(A_{t} − F_{t})^{2} / m ]        MAE = Σ|A_{t} − F_{t}| / m")
-        self.para("Hasilnya dibandingkan dengan dua ramalan sederhana: rata-rata seluruh data latih untuk semua bulan, dan rata-rata tiap bulan kalender pada data latih.")
+        self.h2("2.5", "Ukuran Kecocokan Model")
+        self.para("Kecocokan model dinilai pada data yang dipakai menaksir koefisien, dengan koefisien determinasi (R^{2}) dan <i>Root Mean Square Error</i> (RMSE). "
+                  "Model dengan R^{2} lebih besar dan RMSE lebih kecil dianggap lebih baik menggambarkan pola curah hujan (Kotarumalos dkk., 2025). "
+                  "R^{2} juga dipakai memilih model deret Fourier curah hujan Kota Mataram oleh Astuti dkk. (2018), dan RMSE dipakai sebagai kriteria pemilihan model oleh Permata dkk. (2024).")
+        self.eq("R^{2} = 1 − SSE/SST = 1 − Σ(Y_{t} − Ŷ_{t})^{2} / Σ(Y_{t} − Ȳ)^{2}        RMSE = √[ Σ(Y_{t} − Ŷ_{t})^{2} / n ]")
+        self.para("dengan Y_{t} curah hujan aktual, Ŷ_{t} nilai duga model, Ȳ rata-rata curah hujan, dan n banyaknya data.")
+        self.para("Kusdarwati (2023) juga menilai model dengan plot data curah hujan terhadap nilai duga model; pada data Kota Surabaya, model sudah menjangkau curah hujan rendah tetapi belum menjangkau curah hujan yang tinggi. "
+                  "Plot yang sama dipakai dalam penelitian ini. Kedua ukuran di atas menilai kecocokan pada data 2020–2025. Akurasi ramalan 2026 belum dapat diukur karena data aktual 2026 belum tersedia.")
         self.h2("2.6", "Penelitian Terdahulu")
         self.para("Tabel 2.1 merangkum 15 penelitian terdahulu di Indonesia yang terbit tahun 2016–2026. Sebelas di antaranya membahas deret Fourier, regresi harmonik, atau analisis spektral curah hujan; tiga lainnya berlokasi di Kota Mataram dan NTB dengan metode non-harmonik; satu menjadi acuan pembagian musim dan kriteria RMSE. Dengan Astuti dkk. (2018) yang masuk kelompok Fourier, empat penelitian berlokasi di Kota Mataram atau NTB. Isi tabel diringkas dari abstrak masing-masing artikel; beberapa angka rincian data diambil dari isi artikel.")
         self.tab_caption("2.1", "Penelitian terdahulu")
@@ -531,18 +531,18 @@ class Harmonik(Revisi):
         for row in t.rows[1:]:
             for c in row.cells:
                 for pp in c.paragraphs: pp.paragraph_format.keep_with_next = False
-        self.para("Periode dominan sekitar 12 bulan dilaporkan di Subang, Jayapura, Bandung, Serdang Bedagai, dan tiga kota di Jawa Timur (Susilokarti dkk., 2016; Tulak dkk., 2022; Habinuddin dkk., 2019; Zega & Mardiningsih, 2025; Kusdarwati, 2023), dan komponen harmonik atau Fourier sudah dipakai pada curah hujan Indonesia, termasuk Kota Mataram dan Kota Ambon (Astuti dkk., 2018; Kusdarwati, 2023; Kotarumalos dkk., 2025). Sebagian besar studi peramalan memakai SARIMA atau model pembelajaran mesin. Penelitian ini berbeda dalam tiga hal: data bulanan resmi BPS Kota Mataram selama enam tahun, regresi harmonik k = 1 dengan tiga parameter yang ditafsirkan melalui amplitudo dan fase, serta pengujian ramalan pada 12 bulan tahun 2025 terhadap ramalan sederhana.")
+        self.para("Periode dominan sekitar 12 bulan dilaporkan di Subang, Jayapura, Bandung, Serdang Bedagai, dan tiga kota di Jawa Timur (Susilokarti dkk., 2016; Tulak dkk., 2022; Habinuddin dkk., 2019; Zega & Mardiningsih, 2025; Kusdarwati, 2023), dan komponen harmonik atau Fourier sudah dipakai pada curah hujan Indonesia, termasuk Kota Mataram dan Kota Ambon (Astuti dkk., 2018; Kusdarwati, 2023; Kotarumalos dkk., 2025). Sebagian besar studi peramalan memakai SARIMA atau model pembelajaran mesin. Dari tabel ini, dua penelitian menjadi dasar: Kusdarwati (2023) untuk alur pemodelan harmonik dan penilaian kesesuaian model, dan Astuti dkk. (2018) sebagai penelitian curah hujan Kota Mataram yang dilanjutkan dengan data lebih baru. Penelitian ini berbeda dalam tiga hal: data bulanan resmi BPS Kota Mataram selama enam tahun, regresi harmonik k = 1 dengan tiga parameter yang ditafsirkan melalui amplitudo dan fase, serta ramalan 12 bulan tahun 2026 dari model yang disusun dengan seluruh data.")
         self.h2("2.7", "Kerangka Pemikiran")
-        self.para("Penelitian ini memakai satu variabel, yaitu curah hujan bulanan (univariat), yang dijelaskan oleh fungsi sinus dan kosinus dari waktu. Alurnya ditunjukkan pada Gambar 2.1: data 72 bulan dibagi menjadi data latih dan data uji, data dirangkum, variabel sinus dan kosinus dibentuk lalu koefisiennya ditaksir dengan OLS dan diuji dengan uji F, kemudian model meramalkan 12 bulan data uji dan akurasinya dinilai dengan RMSE dan MAE.")
+        self.para("Penelitian ini memakai satu variabel, yaitu curah hujan bulanan (univariat), yang dijelaskan oleh fungsi sinus dan kosinus dari waktu. Alurnya ditunjukkan pada Gambar 2.1: data 72 bulan dirangkum, variabel sinus dan kosinus dibentuk, koefisiennya ditaksir dengan OLS dari seluruh data dan diuji dengan uji F, kecocokan model dinilai dengan R^{2} dan RMSE, lalu model meramalkan 12 bulan tahun 2026.")
         self.figure("2.1", "Kerangka pemikiran penelitian (univariat)", None, w=14, path=KER,
-                    sumber="Sumber: diadaptasi dari alur Purnama (2021) dan Kusdarwati (2023)")
+                    sumber="Sumber: diadaptasi dari alur Kusdarwati (2023) dan Astuti dkk. (2018)")
 
         # ===== BAB III =====
         self.h1(None, multiline=("BAB III", "METODE PENELITIAN"))
         self.h2("3.1", "Jenis Penelitian")
         self.para("Penelitian kuantitatif dengan data sekunder deret waktu; analisisnya deskriptif (merangkum data) dan prediktif (memodelkan pola musiman dan meramalkan dengan regresi harmonik).")
         self.h2("3.2", "Lokasi dan Waktu Penelitian")
-        self.para("Kota Mataram, Provinsi Nusa Tenggara Barat, data Januari 2020 sampai Desember 2025. Pengumpulan dan pengolahan data dilakukan pada Oktober 2026.")
+        self.para("Kota Mataram, Provinsi Nusa Tenggara Barat, data Januari 2020 sampai Desember 2025. Pengumpulan dan pengolahan data dilakukan pada Oktober sampai November 2026.")
         self.h2("3.3", "Metode Pengumpulan Data")
         self.para("Studi dokumen: kolom jumlah curah hujan (mm) pada Tabel 1.2.1 dibaca dari publikasi <i>Kota Mataram dalam Angka</i> edisi 2021 sampai 2026 (Badan Pusat Statistik Kota Mataram, 2021, 2022, 2023, 2024, 2025, 2026). "
                   "Satu edisi memuat satu tahun, sehingga edisi N berisi data tahun N−1 (Tabel 3.1; tangkapan halaman pada Lampiran A). "
@@ -560,10 +560,11 @@ class Harmonik(Revisi):
         self.lst(["Judul Tabel 1.2.1 edisi 2021, 2022, 2023, 2025, dan 2026 menyebut stasiun BMKG Lombok Barat; edisi 2024 tidak menyebut stasiun. Lokasi stasiun pengamatan tidak dapat dipastikan berada di dalam Kota Mataram.",
                   "Nilai 0,00 mm pada Juli 2021 dan Agustus 2023 tercetak bersama 6 hari hujan dan 1 hari hujan. Teks bahasa Inggris edisi 2024 menulis \"almost 0.00 mm\" untuk Agustus 2023, sehingga diduga hujan di bawah batas ukur tercatat 0; salah cetak belum bisa dikesampingkan. Angka tidak diubah.",
                   "Edisi 2026 mencatat rata-rata 2024 sebesar 166,82 mm (edisi 2025: 150,73 mm); data bulanan 2024 tetap dari edisi 2025 karena edisi 2026 tidak memuat rincian bulanannya.",
-                  "Presisi angka berbeda antaredisi, dan angka tidak diverifikasi silang ke portal BMKG."], numbered=False)
+                  "Presisi angka berbeda antaredisi, dan angka tidak diverifikasi silang ke portal BMKG.",
+                  "Nilai 672,5 mm pada Desember 2024 adalah nilai terbesar dan berada di atas batas pencilan 590,0 mm (kuartil ketiga ditambah 1,5 kali jangkauan antarkuartil). Nilai ini tetap dipakai. Model harmonik orde pertama tidak memodelkan pencilan, dan Kusdarwati (2023) mencatat bahwa pencilan yang sangat besar dapat membuat parameter sinus dan kosinus tidak nyata."], numbered=False)
         self.h2("3.6", "Teknik dan Alat Pengolahan Data")
         self.para("Berkas PDF diubah ke teks dengan <i>pdftotext</i>, lalu 12 nilai tiap edisi disalin ke satu berkas CSV (72 baris) dan dicek dengan rata-rata tahunan. "
-                  "Perhitungan statistik dan regresi harmonik memakai Python 3 (pandas, SciPy, statsmodels, matplotlib). Tabel data dan perhitungan disajikan dalam lembar kerja Microsoft Excel (Lampiran B).")
+                  "Statistik deskriptif dihitung di Microsoft Excel (Lampiran B); regresi harmonik dan uji F dihitung dengan Python 3 (pandas, SciPy, statsmodels, matplotlib).")
         self.h2("3.7", "Identifikasi dan Klasifikasi Variabel")
         self.para("Variabel terikat adalah curah hujan bulanan (Y_{t}), kuantitatif kontinu berskala rasio. Variabel bebasnya dibentuk dari waktu t, yaitu sin(2πt/12) dan cos(2πt/12).")
         self.para("Pola musiman curah hujan Indonesia digerakkan oleh monsun, yang membagi tahun menjadi musim hujan November sampai April dan kemarau Mei sampai Oktober (Kusdarwati, 2023; Tulak dkk., 2022; Permata dkk., 2024). Variabilitas antartahun curah hujan monsun Indonesia dipengaruhi pula oleh fenomena global seperti <i>El Niño-Southern Oscillation</i> (ENSO) (Kusdarwati, 2023; Aulia Putri dkk., 2026). Faktor itu tidak dimasukkan ke model.")
@@ -572,10 +573,10 @@ class Harmonik(Revisi):
         self.h2("3.9", "Teknik Analisis Data dan Uji Hipotesis")
         self.lst(["Mengelompokkan 72 data ke matriks tahun × bulan.",
                   "Menghitung mean, median, modus, dan simpangan baku sampel (n − 1), per tahun dan seluruh data.",
-                  "Membentuk X_{1t} = sin(2πt/12) dan X_{2t} = cos(2πt/12) dengan t = 0 pada Januari 2020, menaksir b_{0}, b_{1}, b_{2} dengan OLS pada 60 bulan data latih, lalu menguji pengaruh gelombang tahunan dengan uji F: H_{0}: b_{1} = b_{2} = 0 (tidak ada pola musiman) melawan H_{1}: paling sedikit satu dari b_{1}, b_{2} tidak nol (ada pola musiman), dengan α = 0,05.",
-                  "Meramal 12 bulan tahun 2025, menghitung RMSE dan MAE terhadap data aktual, lalu membandingkannya dengan ramalan rata-rata data latih dan rata-rata per bulan kalender. Data dibagi menurut urutan waktu."])
+                  "Membentuk X_{1t} = sin(2πt/12) dan X_{2t} = cos(2πt/12) dengan t = 0 pada Januari 2020 sampai t = 71 pada Desember 2025, menaksir b_{0}, b_{1}, b_{2} dengan OLS dari seluruh 72 bulan data, lalu menguji pengaruh gelombang tahunan dengan uji F: H_{0}: b_{1} = b_{2} = 0 (tidak ada pola musiman) melawan H_{1}: paling sedikit satu dari b_{1}, b_{2} tidak nol (ada pola musiman), dengan α = 0,05 dan derajat bebas (2, 69).",
+                  "Menilai kecocokan model dengan R^{2}, RMSE, dan plot data terhadap nilai duga, menghitung amplitudo dan fase, lalu meramal 12 bulan tahun 2026 (t = 72 sampai 83)."])
         self.para("Bentuk hipotesis pada langkah 3 mengikuti Darmawan dkk. (2017) dan Purnama (2021), dan uji F dari keluaran regresi mengikuti Azmi dkk. (2020). "
-                  "Pengujian ramalan pada 12 bulan terakhir mengikuti Purnama (2021) dan RMSE sebagai ukuran akurasi mengikuti Permata dkk. (2024) dan Hadinata dkk. (2026).")
+                  "Urutan langkah 3 dan 4 mengikuti Kusdarwati (2023), dan R^{2} serta RMSE sebagai ukuran kecocokan mengikuti Kotarumalos dkk. (2025).")
 
         # ===== DAFTAR PUSTAKA =====
         self.h1("DAFTAR PUSTAKA", "toc", brk=True)

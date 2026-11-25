@@ -18,7 +18,7 @@ Bab II adalah "kotak peralatan": semua teori yang dipakai di Bab III dijelaskan 
 ## 2.2 Deret waktu
 - **Isi:** Deret waktu = data yang dikumpulkan berurutan menurut waktu. Dianalisis untuk mengenali pola dan meramal nilai berikutnya. Data hujan bulanan termasuk deret waktu.
 - **Artinya:** Urutan itu penting. Januari 2020, Februari 2020, dan seterusnya tidak boleh diacak.
-- **Alasan:** Karena itu data latih/uji dibagi menurut waktu, bukan diacak. Sumber: Habinuddin dkk. (2019); Zega & Mardiningsih (2025).
+- **Alasan:** Urutan menentukan nomor bulan t, dan ramalan 2026 dibuat dengan melanjutkan nomor itu (t = 72 sampai 83). Sumber: Habinuddin dkk. (2019); Zega & Mardiningsih (2025).
 - Konsep: [[Konsep Deret Waktu dan Pola Musiman]].
 
 ## 2.3 Statistika deskriptif
@@ -37,6 +37,7 @@ Inti laporan. Dibaca pelan-pelan.
 - b₁ dan b₂ = angka pengatur tinggi dan posisi gelombang. Dicari dari data.
 - ε_t = sisa yang tidak bisa dijelaskan gelombang (hujan tidak pernah persis mengikuti rumus).
 - 2π/12 = pengatur supaya gelombang selesai satu putaran tiap 12 bulan.
+- Kenapa orde satu (satu gelombang setahun): Kusdarwati (2023) menulis bahwa daerah yang hanya punya satu periode ulang, misalnya satu tahun, dapat dimodelkan dengan harmonik orde satu.
 
 **Mengapa sinus dan kosinus berdua.** Sinus saja selalu mulai dari nol, kosinus saja selalu mulai dari puncak. Digabung dengan pengali b₁ dan b₂, puncak bisa digeser ke bulan mana pun. Itu sebabnya dua-duanya selalu dipertahankan, walau salah satu koefisien kecil.
 
@@ -56,28 +57,29 @@ Inti laporan. Dibaca pelan-pelan.
 
 **Tidak ada Ljung-Box, ADF, atau uji t.** Sudah dibuang agar laporan sederhana dan karena tidak bisa dihitung di Excel. Jangan menyebutnya lagi.
 
-## 2.5 Ukuran akurasi ramalan
-- **Isi:** Akurasi dinilai pada data uji (12 bulan 2025), yang tidak ikut menaksir parameter. Ukurannya RMSE dan MAE; makin kecil makin akurat. Sebagai pembanding, ditetapkan dua ramalan sederhana: rata-rata seluruh data latih untuk semua bulan, dan rata-rata tiap bulan kalender pada data latih. Keduanya dinilai dengan RMSE dan MAE pada data uji yang sama.
-- **Artinya:** Rumus harus membuktikan diri pada soal yang belum pernah dilihat. Nilai RMSE baru bermakna kalau ditaruh di samping tebakan sederhana. Model harmonik **belum tentu** menang; kalau kalah atau seri, itu tetap hasil yang sah dan dilaporkan apa adanya.
-- **Alasan:** Model bisa sangat cocok pada data yang dipakai membuatnya tetapi gagal pada data baru. Karena itu ujiannya pada 2025. Sumber: Purnama (2021) dan Hadinata dkk. (2026) untuk penilaian pada data uji; Permata dkk. (2024) untuk RMSE.
-- Konsep: [[Konsep Data Latih dan Data Uji]], [[Konsep RMSE dan MAE]], [[Konsep Baseline Ramalan Rata-rata]].
+## 2.5 Ukuran kecocokan model
+- **Isi:** Kecocokan dinilai pada data yang dipakai membuat model (72 bulan) dengan R² dan RMSE. R² lebih besar dan RMSE lebih kecil berarti kurva lebih dekat ke data. Rumus: R² = 1 − SSE/SST dan RMSE = √( Σ(Y_t − Ŷ_t)² / n ). Selain angka, data dan kurva digambar berdampingan.
+- **Artinya:** R² menjawab "berapa bagian naik-turun hujan yang tertangkap gelombang". RMSE menjawab "rata-rata kurva meleset berapa mm dari data". Grafik memperlihatkan bulan mana yang paling jauh, biasanya bulan puncak hujan.
+- **Alasan:** Dosen meminta langsung meramal 2026, jadi tidak ada data yang disimpan untuk ujian. Sumber: Kotarumalos dkk. (2025) untuk rumus R² dan kriteria R² besar dan RMSE kecil; Astuti dkk. (2018) untuk R² pada deret Fourier hujan Mataram; Permata dkk. (2024) untuk RMSE; Kusdarwati (2023) untuk plot data dan nilai duga.
+- **Hati-hati:** R² dan RMSE menilai kecocokan pada 2020–2025. Angka itu tidak membuktikan ramalan 2026 akurat, karena hujan 2026 belum diketahui.
+- Konsep: [[Konsep R-Squared dan Goodness of Fit]], [[Konsep RMSE dan MAE]], [[Konsep Data Latih dan Data Uji]].
 
 ## 2.6 Penelitian terdahulu (Tabel 2.1)
 - **Isi:** 15 artikel Indonesia tahun 2016–2026 dalam empat kelompok: 5 regresi Fourier/harmonik, 6 analisis spektral/periodogram, 3 Mataram/NTB dengan metode lain, 1 pembagian musim dan kriteria RMSE.
-- **Artinya:** Orang lain sudah menemukan periode sekitar 12 bulan di banyak kota, dan komponen Fourier sudah dipakai untuk hujan Indonesia. Penelitian kita berbeda pada data (bulanan BPS Mataram enam tahun), model (k = 1, tiga parameter), dan cara menguji (12 bulan 2025 terhadap ramalan sederhana).
+- **Artinya:** Orang lain sudah menemukan periode sekitar 12 bulan di banyak kota, dan komponen Fourier sudah dipakai untuk hujan Indonesia. Penelitian kita berbeda pada data (bulanan BPS Mataram enam tahun), model (k = 1, tiga parameter), dan ramalan (12 bulan 2026 dari model yang memakai semua data). Dasarnya dua artikel: Kusdarwati (2023) untuk cara kerja dan Astuti dkk. (2018) untuk Kota Mataram.
 - **Alasan:** Dosen minta tabel minimal 15 artikel. Isi tabel diambil dari abstrak resmi (beberapa angka dari isi PDF) dan tidak boleh dikarang.
 - Konsep: [[Konsep Penelitian Terdahulu Harmonik]]. Daftar: [[Tabel 2.1 Penelitian Terdahulu]].
 
 ## 2.7 Kerangka pemikiran
-- **Isi:** Alur kerja: 72 data → bagi latih/uji → rangkum → bentuk sinus-kosinus → OLS dan uji F → ramal 12 bulan → hitung RMSE dan MAE.
-- **Alasan:** Bagian ini wajib bersumber (diadaptasi dari alur Purnama, 2021 dan Kusdarwati, 2023). Gambarnya: [[Gambar 2.1 Kerangka Pemikiran]]. Karena hanya satu variabel, X dan Y terpisah tidak wajib ([[K11 Variabel x dan y tidak wajib]]).
+- **Isi:** Alur kerja: 72 data → rangkum → bentuk sinus-kosinus → OLS dan uji F → R², RMSE, dan grafik → ramal 12 bulan 2026.
+- **Alasan:** Bagian ini wajib bersumber (diadaptasi dari alur Kusdarwati, 2023 dan Astuti dkk., 2018). Gambarnya: [[Gambar 2.1 Kerangka Pemikiran]]. Karena hanya satu variabel, X dan Y terpisah tidak wajib ([[K11 Variabel x dan y tidak wajib]]).
 
 ## Kalau ditanya dosen
 - *Apa itu regresi harmonik?* Regresi biasa yang variabel bebasnya sinus dan kosinus dari waktu.
 - *Kenapa 12?* Karena siklus musim berulang tiap 12 bulan.
 - *Apa itu amplitudo?* Seberapa jauh hujan naik dari rata-rata saat puncak.
 - *Untuk apa uji F?* Memeriksa gelombang itu nyata atau kebetulan.
-- *Kenapa ukuran akurasi pada 2025, bukan data lama?* Agar jujur: model belum pernah melihat 2025.
+- *R² dan RMSE dihitung dari data yang dipakai membuat model, apa itu adil?* Angka itu mengukur kecocokan, bukan akurasi ramalan. Akurasi 2026 baru bisa dicek setelah BPS menerbitkan data 2026.
 
 ## Belum beres
 - Rumus amplitudo A dan fase φ diturunkan dari identitas trigonometri; belum ada artikel Indonesia yang sudah dibaca yang memuat rumusnya.

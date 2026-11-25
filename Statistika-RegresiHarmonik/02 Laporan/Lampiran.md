@@ -26,6 +26,6 @@ Isi di docx:
 
 Sheet Deret Waktu (format panjang 72 baris) tidak ditampilkan; isinya sama dengan sheet Data.
 
-Tidak ada tangkapan yang memuat koefisien, uji F, ramalan, RMSE, atau MAE: bagian itu di luar Bab III ([[Aturan Kerja]]). Tangkapan lama yang memuat hasil regresi sudah dipindah ke `arsip_di_luar_bab3/`.
+Tidak ada tangkapan yang memuat koefisien, uji F, R², RMSE, atau ramalan: bagian itu di luar Bab III ([[Aturan Kerja]]). Tangkapan lama yang memuat hasil regresi sudah dipindah ke `arsip_di_luar_bab3/`.
 
 Terkait: [[Status Laporan Revisi]], [[Data BPS 72 Bulan]].

@@ -222,6 +222,17 @@ Sisa untuk pengguna:
    - Ditambahkan bagian 3 "Cara membaca rumus": daftar 21 simbol beserta cara melafalkannya, misalnya "epsilon te", "fi", "omega", dan "sigma", lalu 8 rumus dari Bab II/III, masing-masing dengan lafal dan artinya. Diingatkan juga bahwa A punya dua arti: amplitudo, dan A_t sebagai nilai aktual di RMSE/MAE. PDF sekarang 8 halaman.
 3. Catatan: Kata Pengantar di docx masih "Oktober 2026", sedangkan vault "November 2026". Ubah manual di Word kalau perlu.
 
+## Tahap 27: Ramal 2026 tanpa data uji (25 Nov 2026, Claude Code di serverarm)
+Arahan dosen (dilaporkan kelompok): langsung meramal 2026, bukan memakai 2025 sebagai data uji; pilih 1–2 penelitian terdahulu sebagai dasar lalu ikuti dengan data berbeda. Keputusan lengkap: [[Keputusan Ramal 2026 dan Dasar Penelitian]].
+1. **Dasar penelitian:** Kusdarwati (2023) dan Astuti dkk. (2018). PDF keduanya dibaca ulang (teks diekstrak dengan Ghostscript), juga Kotarumalos dkk. (2025) untuk ukuran R² dan RMSE. Kalimat yang dikutip dicatat di catatan artikelnya. Daftar Pustaka tetap 22 entri dan Tabel 2.1 tetap 15 artikel.
+2. **Naskah vault:** Abstrak par. 2–4; Bab I par. 7, 1.2, 1.3 butir 5, 1.4, 1.5; Bab II 2.4 (alasan orde satu dari Kusdarwati), 2.5 (jadi Ukuran Kecocokan Model: R² = 1 − SSE/SST dan RMSE pada 72 bulan, plot data terhadap nilai duga), 2.6 (kalimat dasar penelitian), 2.7; Bab III 3.2, 3.5 (pencilan Desember 2024, batas 590,0 mm), 3.9 (OLS dari 72 bulan, uji F derajat bebas (2, 69), ramalan t = 72 sampai 83); Gambar 2.1 (sumber adaptasi Kusdarwati dan Astuti); Lampiran (kalimat penutup).
+3. **Dibuang:** data uji 2025, MAE, dua ramalan pembanding. Purnama (2021) tetap dikutip untuk hipotesis musiman dan data BPS; Hadinata dkk. (2026) tetap di Bab I.
+4. **Catatan lain:** Alur Regresi Harmonik, Data BPS 72 Bulan (bagian 4 dan kolom latih/uji dibuang), Tabel 2.1 (bagian Dasar penelitian), Peta, START (juga 27 → 22 entri), kanvas, K02, K04, K08, K10, Keputusan Metode, Status Laporan Revisi, Daftar Tugas bagian 5, Pertanyaan Terbuka No. 6–7, catatan artikel Kusdarwati, Astuti, Kotarumalos, Purnama.
+5. **Panduan:** 00–04; Konsep Data Latih dan Data Uji (kini menjelaskan kenapa tidak dipakai), RMSE dan MAE (kini RMSE saja), Baseline (diberi tanda tidak dipakai), R², Hipotesis dan Uji F (F kritis (2, 69) ≈ 3,13), Estimasi OLS, Deret Waktu, Penelitian Terdahulu.
+6. **`build/buat_docx.py`:** teks disamakan dengan vault, termasuk tiga ketertinggalan lama (sitasi Bab I par. 6, kalimat 3.6, tanggal Kata Pengantar November 2026); Gambar 2.1 jadi 5 kotak baru; variabel `_latih` dibuang. Lolos `py_compile`, **tidak dijalankan**. NIM kini dibaca dari `build/anggota.json` (lokal, tidak di-commit).
+7. **Docx belum diubah.** Menunggu perintah ([[Aturan Kerja]]).
+8. Vault kini di git (repo publik): PDF artikel dan BPS, plugin `.obsidian`, dan NIM tidak di-commit.
+
 ## Keadaan saat ini (diperbarui 1 Nov 2026)
 - **Pembaruan 2 Nov 2026 (tahap 25):** docx siap kumpul ada di `Desktop/Claude/Statistika-RH/Build_RegresiHarmonik/`. Isinya sudah sama dengan vault, Lampiran B sudah diisi tangkapan xlsx terbaru, dan Daftar Lampiran sudah ada. Butir "Masih terbuka" 1 dan 2 di bawah selesai. Catatan di bawah ini keadaan 1 Nov.
 

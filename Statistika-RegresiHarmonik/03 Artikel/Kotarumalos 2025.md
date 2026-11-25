@@ -12,7 +12,7 @@ tags: [statistika, regresi-harmonik, artikel]
 |---|---|---|
 | Curah hujan bulanan Kota Ambon, Januari 2020–Desember 2024; prediktor suhu, kelembapan, kecepatan angin, tekanan udara (BPS dan BMKG) | Regresi nonparametrik Spline Truncated dan deret Fourier; knot dengan GCV, jumlah harmonik dengan AIC | Fourier dua harmonik terbaik: R² 0,5719, AIC 820,8226; kelembapan, tekanan udara, dan sinus(2) berpengaruh signifikan |
 
-**Peran untuk penelitian ini:** contoh regresi deret Fourier dengan estimasi OLS pada curah hujan bulanan Indonesia, dengan R², AIC, dan RMSE sebagai ukuran.
+**Peran untuk penelitian ini:** contoh regresi deret Fourier dengan estimasi OLS pada curah hujan bulanan Indonesia, dengan R², AIC, dan RMSE sebagai ukuran. Sejak 25 Nov 2026 menjadi sumber ukuran kecocokan di Bab II 2.5: rumus $R^2 = 1 - SSE/SST$ (persamaan 25) dan langkah analisis "Model dengan nilai R² terbesar dan AIC serta RMSE terkecil dianggap paling akurat dalam menggambarkan tren curah hujan" (hlm. 4522). Data dari *Kota Ambon Dalam Angka* (BPS) dan BMKG Provinsi Maluku.
 
 **Hasil cek isi (31 Okt 2026, PDF terbaca penuh):**
 - Uji F disebut untuk model spline suhu (p < 0,05), bukan untuk model Fourier.

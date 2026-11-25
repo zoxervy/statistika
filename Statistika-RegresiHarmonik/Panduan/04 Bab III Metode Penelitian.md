@@ -15,7 +15,7 @@ Bab III menjawab: **bagaimana penelitian dikerjakan, supaya orang lain bisa meng
 - Konsep: [[Konsep Deret Waktu dan Pola Musiman]].
 
 ## 3.2 Lokasi dan waktu
-Kota Mataram, NTB; data Januari 2020–Desember 2025; pengolahan Oktober 2026. Satu kalimat, tidak perlu dijelaskan panjang.
+Kota Mataram, NTB; data Januari 2020–Desember 2025; pengolahan Oktober sampai November 2026. Satu kalimat, tidak perlu dijelaskan panjang.
 
 ## 3.3 Pengumpulan data
 - **Isi:** Dibaca dari Tabel 1.2.1 buku *Kota Mataram dalam Angka* edisi 2021–2026. Satu edisi memuat satu tahun, jadi edisi N berisi data tahun N−1. Data tidak diunduh dari portal BMKG karena dibatasi dua tahun per permintaan dan perlu akun.
@@ -41,11 +41,12 @@ Kota Mataram, NTB; data Januari 2020–Desember 2025; pengolahan Oktober 2026. S
 ## 3.5 Jenis dan sumber data, serta keanehan data
 - **Isi:** Data sekunder, kuantitatif, skala rasio. Sebelum dipakai, dua pemeriksaan dilakukan: rata-rata 12 bulan tiap tahun dicocokkan dengan baris "Kota Mataram" di tabel BPS, dan 72 angka dicocokkan satu per satu dengan halaman PDF.
 - **Artinya:** Yang dicek adalah *kami menyalin dengan benar*. Itu tidak membuktikan angka BPS sendiri benar, dan laporan menyebutnya terus terang.
-- **Empat catatan jujur** (ini yang paling sering ditanya):
+- **Lima catatan jujur** (ini yang paling sering ditanya):
   1. Judul tabel menyebut stasiun "BMKG Lombok Barat" (edisi 2024 tidak menyebut stasiun). Jadi belum pasti stasiunnya ada di dalam Kota Mataram.
   2. Juli 2021 dan Agustus 2023 tercatat 0,00 mm, padahal ada hari hujan (6 dan 1). Dugaan: hujan di bawah batas ukur dicatat nol, tetapi salah cetak belum bisa dikesampingkan. Angka tidak diubah.
   3. Rata-rata 2024: edisi 2025 menulis 150,73 mm, edisi 2026 menulis 166,82 mm. Data bulanan 2024 tetap dari edisi 2025 karena edisi 2026 tidak memuat rincian bulanan.
   4. Presisi angka berbeda antar edisi dan tidak dicocokkan ke portal BMKG.
+  5. Desember 2024 tercatat 672,5 mm, di atas batas pencilan 590,0 mm, dan tetap dipakai. Satu bulan seekstrem ini bisa menarik kurva; Kusdarwati (2023) mencatat pencilan yang sangat besar dapat membuat koefisien sinus dan kosinus tidak nyata.
 - **Selisih 0,01 mm pada 2024** di teks: hitungan 150,725 vs tabel 150,73. Itu hanya pembulatan.
 - Konsep: [[Konsep Keanehan Data]]; rincian: [[Catatan Kualitas Data]], [[Revisi BPS 2024]].
 
@@ -74,26 +75,29 @@ Hitung mean, median, modus, simpangan baku per tahun dan seluruh data. Contoh me
 ### Langkah 3: sinus-kosinus, OLS, uji F
 - Waktu diberi nomor: Januari 2020 = 0, Februari 2020 = 1, ... Desember 2020 = 11, Januari 2021 = 12, ... Desember 2024 = 59, Januari 2025 = 60, ... Desember 2025 = 71.
 - Tiap bulan diubah menjadi dua angka: X₁ = sin(2πt/12) dan X₂ = cos(2πt/12). Contoh: Januari (t = 0) → X₁ = 0, X₂ = 1. April (t = 3) → X₁ = 1, X₂ = 0. Juli (t = 6) → X₁ = 0, X₂ = −1. Nilainya berulang tiap 12 bulan, itulah yang membuat gelombang berulang.
-- Tiga angka b₀, b₁, b₂ dicari dengan OLS dari **60 bulan data latih saja**. Konsep: [[Konsep Estimasi OLS]].
+- Tiga angka b₀, b₁, b₂ dicari dengan OLS dari **seluruh 72 bulan** (t = 0 sampai 71). Konsep: [[Konsep Estimasi OLS]].
 - Uji F memeriksa: gelombang ini nyata atau kebetulan? H₀: b₁ = b₂ = 0, H₁: minimal satu tidak nol, α = 0,05. Konsep: [[Konsep Hipotesis dan Uji F]].
 - Sumber bentuk hipotesis: Darmawan dkk. (2017), Purnama (2021). Uji F dibaca dari keluaran regresi: Azmi dkk. (2020).
 
-### Langkah 4: ramal 2025 dan nilai
-- Masukkan t = 60 sampai 71 ke rumus → 12 ramalan.
-- Bandingkan dengan 12 hujan sebenarnya 2025 → RMSE dan MAE. Konsep: [[Konsep RMSE dan MAE]].
-- Bandingkan dengan dua tebakan malas. Konsep: [[Konsep Baseline Ramalan Rata-rata]].
-- Pembagian menurut waktu, tidak diacak. Konsep: [[Konsep Data Latih dan Data Uji]].
-- Sumber: pengujian 12 bulan terakhir mengikuti Purnama (2021); RMSE mengikuti Permata dkk. (2024) dan Hadinata dkk. (2026).
+### Langkah 4: nilai kecocokan, lalu ramal 2026
+- Hitung R² dan RMSE dari 72 bulan, dan gambar data di samping kurva. Konsep: [[Konsep R-Squared dan Goodness of Fit]], [[Konsep RMSE dan MAE]].
+- Hitung amplitudo dan fase: seberapa besar ayunan dan bulan berapa puncaknya. Konsep: [[Konsep Amplitudo dan Fase]].
+- Masukkan t = 72 sampai 83 (Januari sampai Desember 2026) ke rumus, hasilnya 12 ramalan.
+- Ramalan 2026 belum bisa dinilai karena data hujan 2026 belum terbit. Konsep: [[Konsep Data Latih dan Data Uji]].
+- Sumber: urutan langkah mengikuti Kusdarwati (2023); R² dan RMSE mengikuti Kotarumalos dkk. (2025).
 
 ## Yang sudah dibuang (jangan muncul lagi)
+Sejak 25 Nov 2026 juga dibuang: data uji 2025, MAE, dan dua tebakan pembanding, karena dosen meminta langsung meramal 2026 ([[Keputusan Ramal 2026 dan Dasar Penelitian]]).
+
 Uji stasioneritas ADF, uji Ljung-Box, uji t, dan model SARIMA sebagai pembanding. Alasannya sederhana: tidak bisa dihitung di Excel, tidak semua artikel acuan memakainya, dan laporan harus mudah dijelaskan.
 
 ## Kalau ditanya dosen
 - *Kenapa data dari BPS, bukan BMKG?* Portal BMKG membatasi unduhan dua tahun per permintaan dan perlu akun; buku BPS terbuka dan datanya memang asal BMKG.
 - *Kenapa angka 0,00 mm dibiarkan?* Karena kami tidak berhak mengubah angka sumber; keanehannya dicatat di 3.5.
-- *Kenapa 60 latih dan 12 uji?* 12 bulan = satu siklus penuh; model tidak boleh melihat 2025 saat dibuat.
+- *Kenapa tidak ada data uji?* Arahan dosen: langsung meramal 2026 dari semua data. Akibatnya R² dan RMSE hanya menilai kecocokan, dan itu ditulis terus terang di Bab II 2.5.
+- *Penelitian dasarnya apa?* Kusdarwati (2023) untuk cara kerja harmonik, Astuti dkk. (2018) untuk Kota Mataram yang kami lanjutkan dengan data baru.
 - *Kenapa hanya uji F?* Yang ditanya cuma satu: ada pola musiman atau tidak. Dua koefisien dinilai sekaligus oleh uji F.
-- *Statistik yang dipakai apa?* Mean, median, modus, simpangan baku sampel (n−1), OLS, uji F, RMSE, MAE.
+- *Statistik yang dipakai apa?* Mean, median, modus, simpangan baku sampel (n−1), OLS, uji F, R², RMSE.
 
 ## Belum beres
 - Lampiran B baru (tangkapan layar xlsx) dikerjakan pengguna; tangkapan lama B.3–B.7 berisi hasil regresi dan tidak dipakai.

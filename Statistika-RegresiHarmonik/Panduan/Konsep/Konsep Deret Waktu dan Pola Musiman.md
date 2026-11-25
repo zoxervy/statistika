@@ -10,8 +10,8 @@ tags: [statistika, regresi-harmonik, konsep]
 ## Deret waktu
 Contoh bukan deret waktu: nilai ujian 30 mahasiswa (urutannya tidak berarti). Contoh deret waktu: hujan Januari 2020, Februari 2020, Maret 2020, dan seterusnya (urutan berarti, karena bulan ini dipengaruhi musim yang sedang berjalan). Definisi: Habinuddin dkk. (2019); Zega dan Mardiningsih (2025).
 
-## Mengapa tidak boleh diacak
-Untuk meramal masa depan, kita hanya boleh memakai informasi dari masa lalu. Kalau 72 bulan diacak lalu sebagian diambil sebagai data uji, data 2025 bisa ikut "mengajari" model tentang 2025. Itu sama dengan melihat kunci jawaban sebelum ujian. Karena itu pembagian latih/uji dilakukan menurut waktu ([[Konsep Data Latih dan Data Uji]]).
+## Mengapa urutan tidak boleh diacak
+Nomor t harus mengikuti bulan yang sebenarnya, karena t yang diubah menjadi sinus dan kosinus. Kalau Januari 2021 diberi nomor milik Juli, gelombangnya ikut bergeser. Ramalan 2026 dibuat dengan melanjutkan nomor itu (t = 72 sampai 83), jadi hanya memakai informasi dari 2020–2025 ([[Konsep Data Latih dan Data Uji]]).
 
 ## Pola musiman pada data kita
 Rata-rata tiap bulan kalender dari enam tahun (mm):

@@ -38,10 +38,15 @@ Tiap artikel masuk satu kelompok menurut metode utamanya (5 + 6 + 3 + 1 = 15). A
 - Komponen harmonik/Fourier sudah dipakai pada curah hujan Indonesia, termasuk Kota Mataram (Astuti dkk., 2018; Kusdarwati, 2023) dan Kota Ambon (Kotarumalos dkk., 2025).
 - Sebagian besar studi peramalan memakai SARIMA atau model mesin; model harmonik parametrik univariat pada data bulanan BPS Kota Mataram belum ditemukan.
 
+## Dasar penelitian (25 Nov 2026)
+Arahan dosen: pilih satu atau dua penelitian terdahulu sebagai dasar, lalu ikuti atau lanjutkan dengan data yang berbeda ([[Keputusan Ramal 2026 dan Dasar Penelitian]]).
+- [[Kusdarwati 2023]]: alur metode. Periode ulang dicari dulu, model harmonik orde k dibentuk, lalu kesesuaian dinilai dengan plot data terhadap nilai duga. Orde satu untuk daerah dengan satu periode ulang tahunan.
+- [[Astuti 2018]]: penelitian deret Fourier curah hujan Kota Mataram untuk prediksi 2017, dilanjutkan dengan data BPS 2020–2025 dan ramalan 2026.
+
 ## Pembeda penelitian ini
 1. Data: 72 bulan publikasi resmi BPS Kota Mataram (2020–2025).
 2. Model: regresi harmonik k = 1 (3 parameter, OLS), dengan amplitudo dan fase sebagai interpretasi.
-3. Evaluasi: uji 12 bulan tahun 2025 terhadap pembanding rata-rata data latih.
+3. Ramalan: 12 bulan tahun 2026 dari model yang disusun dengan seluruh 72 data; kecocokan dinilai dengan R² dan RMSE.
 
 Diganti saat audit 30 Okt 2026: Sudibyakto (2016) dan Wahyuni dkk. (2016); alasan di [[Artikel Tidak Dipakai]]. Diganti 31 Okt 2026: Bimaprawira & Rejeki (2021) dan Pratiwi dkk. (2020) oleh Zega & Mardiningsih (2025) dan Kotarumalos dkk. (2025).
 
