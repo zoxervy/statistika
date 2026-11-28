@@ -32,7 +32,7 @@ flowchart LR
 - **Naskah Laporan:** [[Status Laporan Revisi]], [[Abstrak dan Kata Pengantar]], [[Bab I Pendahuluan]], [[Bab II Kajian Pustaka]], [[Bab III Metode Penelitian]], [[Daftar Pustaka]], [[Lampiran]]
 - **Kerangka Pemikiran:** [[Gambar 2.1 Kerangka Pemikiran]] (diadaptasi dari alur Kusdarwati 2023 dan Astuti 2018)
 - **Artikel Terkait:** [[Tabel 2.1 Penelitian Terdahulu]] (15 artikel 2016–2026), [[Artikel Tidak Dipakai]]
-- **Buku Teori:** [[Sudaryono 2021]], [[Rujukan Lain]]; dilepas: [[Wilks 2019]]
+- **Buku Teori:** [[Sudaryono 2021]], [[Rujukan Lain]]; dilepas: Wilks 2019
 - **Data & Analisis:** [[Data BPS 72 Bulan]], [[Revisi BPS 2024]], [[Catatan Kualitas Data]]
 - **Metode Analisis:** [[Alur Regresi Harmonik]] (4 langkah: matriks, statistik deskriptif, sin/cos + OLS + uji F, R²/RMSE dan ramalan 2026)
 - **Status & Panduan:** [[Daftar Tugas]], [[Log Verifikasi]], [[Pertanyaan Terbuka]]

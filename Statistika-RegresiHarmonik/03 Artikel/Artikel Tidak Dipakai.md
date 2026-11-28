@@ -23,8 +23,10 @@ Daftar artikel yang dikumpulkan selama eksplorasi literatur namun tidak dimasukk
    - Pratiwi, A., Taruna, R. M., Agustiarini, S., & Wibowo, D. S. A. (2020). Prediksi curah hujan bulanan di wilayah Lombok Barat menggunakan principal component regression (PCR). *Jurnal Teori dan Aplikasi Fisika*, *8*(2), 175–182. https://doi.org/10.23960/jtaf.v8i2.2597. PCR dengan prediktor suhu muka laut.
    - Pengganti: [[Zega 2025]] dan [[Kotarumalos 2025]].
 
-10. **Dilepas 1 Nov 2026 (pemangkasan rujukan pendukung; kutipannya dialihkan ke artikel Tabel 2.1):** Aulia, Yozza, & Devianto (2019) [[Aulia 2019]]; Khikmah & Sofro (2025) [[Khikmah 2025]]; Mulsandi (2024) [[Mulsandi 2024]].
-9. **Wilks, D. S. (2019)** *Statistical methods in the atmospheric sciences* (4th ed.), Elsevier: dilepas 1 Nov 2026. Buku luar negeri; kriteria proyek hanya penelitian Indonesia. Kutipannya diganti artikel Indonesia ([[Wilks 2019]]).
+10. **Dilepas 1 Nov 2026 (pemangkasan rujukan pendukung; kutipannya dialihkan ke artikel Tabel 2.1):** Aulia, Yozza, & Devianto (2019) Aulia 2019; Khikmah & Sofro (2025) Khikmah 2025; Mulsandi (2024) Mulsandi 2024.
+9. **Wilks, D. S. (2019)** *Statistical methods in the atmospheric sciences* (4th ed.), Elsevier: dilepas 1 Nov 2026. Buku luar negeri; kriteria proyek hanya penelitian Indonesia. Kutipannya diganti artikel Indonesia (Wilks 2019).
 8. **Wei, W. W. S. (2019)** *Time series analysis: Univariate and multivariate methods* (2nd ed.), Pearson: dilepas 31 Okt 2026. Cetak ulang edisi 2006 (rujukan di bawah 2016 secara efektif), dipakai untuk definisi deret waktu, ADF, dan Ljung-Box. ADF dan Ljung-Box dibuang dari laporan; definisi deret waktu kini disitasi ke Aulia dkk. (2019) dan Zega & Mardiningsih (2025). Catatan lama: `04 Teori/Wei 2019.md` dihapus.
+
+Catatan rinci Aulia 2019, Khikmah 2025, Mulsandi 2024, Wilks 2019, dan Bloomfield 2000 serta daftar `Koleksi Artikel Cadangan` dihapus dari vault pada 28 Nov 2026 karena tidak dipakai laporan. Isinya masih ada di riwayat git (commit 609a2c8).
 
 Terkait: [[Tabel 2.1 Penelitian Terdahulu]]
